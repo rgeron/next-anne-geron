@@ -59,6 +59,28 @@ export function PodcastPlayerCard(props: PodcastPlayerProps) {
     }
   };
 
+  const forward10 = () => {
+    if (audioRef.current) {
+      const newTime = Math.min(
+        audioRef.current.currentTime + 10,
+        props.endTime
+      );
+      audioRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+    }
+  };
+
+  const backward10 = () => {
+    if (audioRef.current) {
+      const newTime = Math.max(
+        audioRef.current.currentTime - 10,
+        props.startTime
+      );
+      audioRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+    }
+  };
+
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
@@ -70,7 +92,7 @@ export function PodcastPlayerCard(props: PodcastPlayerProps) {
 
   return (
     <Card className="w-[280px]">
-      <CardHeader>
+      <CardHeader className="h-24">
         <CardTitle className="text-lg">{props.title}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -102,6 +124,13 @@ export function PodcastPlayerCard(props: PodcastPlayerProps) {
             <RewindIcon className="h-4 w-4" />
           </Button>
           <Button
+            variant="outline"
+            onClick={backward10}
+            className="h-10 w-14 text-xs"
+          >
+            -10s
+          </Button>
+          <Button
             onClick={togglePlay}
             size="icon"
             className={cn(
@@ -114,6 +143,13 @@ export function PodcastPlayerCard(props: PodcastPlayerProps) {
             ) : (
               <PlayIcon className="h-4 w-4" />
             )}
+          </Button>
+          <Button
+            variant="outline"
+            onClick={forward10}
+            className="h-10 w-14 text-xs"
+          >
+            +10s
           </Button>
         </div>
       </CardContent>
