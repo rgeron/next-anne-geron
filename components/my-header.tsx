@@ -47,7 +47,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="lg"
-            className="text-white hover:text-gray-200 transition-colors text-lg font-medium"
+            className="text-white transition-colors text-lg font-semibold"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             Menu

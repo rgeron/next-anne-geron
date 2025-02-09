@@ -6,7 +6,7 @@ import { ContactForm } from "./contact-form";
 export function Footer() {
   return (
     <footer id="footer" className="bg-[#F5F0E8] mt-10">
-      <div className="w-full h-2 bg-[#8B8589]" />
+      <div className="w-full h-2" />
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <div className="max-w-xl">
