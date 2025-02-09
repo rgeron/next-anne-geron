@@ -14,7 +14,7 @@ const defaultQuotes = [
     text: "Parce qu'il faut vivre, vieillir est une chance et mourir une nécessité.",
   },
   {
-    text: "Vieillir c'est chiant et on n'a rien trouvé de mieux pour vivre.",
+    text: "Vieillir c'est éprouvant et on n'a rien trouvé de mieux pour vivre.",
   },
   {
     text: "Nos parents et l'école nous apprennent à grandir puis nous sommes livrés à nous même pour vieillir.",
