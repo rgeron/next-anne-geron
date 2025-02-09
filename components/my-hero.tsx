@@ -50,27 +50,8 @@ export function Hero() {
   return (
     <section className="container mx-auto px-4 py-12 lg:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        <div className="lg:col-span-7">
-          <div className="relative h-[200px] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentQuoteIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0"
-              >
-                <p className="text-2xl lg:text-3xl font-serif italic text-gray-800">
-                  {defaultQuotes[currentQuoteIndex].text}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-
-        <div className="lg:col-span-5 flex justify-center">
-          <div className="relative w-full sm:w-5/6 bg-white overflow-hidden rounded-lg border-2 border-black">
+        <div className="lg:col-span-5">
+          <div className="relative w-full bg-white overflow-hidden rounded-lg border-2 border-black">
             <motion.img
               src="/images/photo1.jpg"
               alt="Anne Géron"
@@ -125,6 +106,26 @@ export function Hero() {
                 </p>
               </div>
             </motion.div>
+          </div>
+        </div>
+
+        <div className="lg:col-span-7 flex flex-col items-center">
+          <img src="/images/logo.jpg" alt="Logo" className="w-48 mb-8" />
+          <div className="relative h-[200px] flex items-center justify-center w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentQuoteIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0"
+              >
+                <p className="text-2xl lg:text-3xl font-serif italic text-gray-800">
+                  {defaultQuotes[currentQuoteIndex].text}
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
