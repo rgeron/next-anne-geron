@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const defaultQuotes = [
@@ -110,7 +111,14 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-7 flex flex-col items-center">
-          <img src="/images/logo.jpg" alt="Logo" className="w-48 mb-8" />
+          <Image
+            src="/images/logo.jpg"
+            alt="Logo"
+            width={400}
+            height={200}
+            className="mb-12"
+            priority
+          />
           <div className="relative h-[200px] flex items-center justify-center w-full">
             <AnimatePresence mode="wait">
               <motion.div

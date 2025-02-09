@@ -32,7 +32,7 @@ export function PartnersSection() {
   }, []);
 
   return (
-    <section className="py-16 overflow-hidden bg-gray-50">
+    <section className="py-16 overflow-hidden bg-white">
       <div className="container mx-auto px-4 mb-6">
         <h2 className="text-4xl text-center mb-6 font-agrandir">
           Nous avons eu des projets ensemble
