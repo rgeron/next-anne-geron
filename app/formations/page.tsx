@@ -1,3 +1,4 @@
+import { FormationCard } from "@/components/formations/formation-card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ScrollText } from "lucide-react";
 import Link from "next/link";
@@ -70,16 +71,12 @@ export default function FormationsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {themes.map((theme, index) => (
-          <div
+          <FormationCard
             key={index}
-            className="p-6 rounded-lg border border-gray-200 hover:border-primary/50 transition-colors"
-          >
-            <div className="mb-2 p-2 rounded-full w-fit">{theme.icon}</div>
-            <h3 className="text-lg font-mono font-semibold mb-2">
-              {theme.title}
-            </h3>
-            <p className="text-gray-600 text-base">{theme.description}</p>
-          </div>
+            title={theme.title}
+            description={theme.description}
+            icon={theme.icon}
+          />
         ))}
       </div>
 
