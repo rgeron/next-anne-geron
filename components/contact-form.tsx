@@ -2,6 +2,7 @@ import { sendEmail } from "@/app/actions/send-email.action";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { agrandirGrandHeavy, agrandirRegular } from "@/lib/fonts";
 import { useTransition } from "react";
 import { toast } from "sonner";
 
@@ -24,10 +25,12 @@ export function ContactForm() {
 
   return (
     <form id="contact-form" action={onSubmit} className="space-y-8">
-      <h2 className="text-3xl mb-8" style={{ fontFamily: "Agrandir" }}>
+      <h2 className={`${agrandirGrandHeavy.className} text-3xl mb-8`}>
         Contactez-moi !
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div
+        className={`${agrandirRegular.className} grid grid-cols-1 md:grid-cols-2 gap-6`}
+      >
         <div className="space-y-3">
           <label htmlFor="name" className="text-base font-medium">
             Nom et prénom
