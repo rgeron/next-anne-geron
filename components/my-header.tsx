@@ -42,17 +42,12 @@ export function Header() {
 
   return (
     <header className="bg-[#8B8589] text-white py-4 relative z-50 shadow-md">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link
-          href="/"
-          className="text-xl font-semibold hover:text-gray-200 transition-colors"
-        >
-          Anne Geron
-        </Link>
+      <div className="container mx-auto px-4">
         <nav className="relative" ref={menuRef}>
           <Button
             variant="ghost"
-            className="text-white hover:text-gray-200 transition-colors"
+            size="lg"
+            className="text-white hover:text-gray-200 transition-colors text-lg font-medium"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             Menu
@@ -60,7 +55,7 @@ export function Header() {
 
           {/* Dropdown Menu */}
           {isMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-[#F5F0E8] ring-1 ring-[#8B8589] ring-opacity-20">
+            <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-[#F5F0E8] ring-1 ring-[#8B8589] ring-opacity-20">
               <div className="py-1">
                 <Link
                   href="/"
