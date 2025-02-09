@@ -2,53 +2,43 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export function ContactForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [statusMessage, setStatusMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name || !phone || !message) {
-      setStatus("error");
-      setStatusMessage("Veuillez remplir tous les champs.");
+      toast.error("Veuillez remplir tous les champs.");
       return;
     }
 
-    setStatus("loading");
-    setStatusMessage("Envoi en cours...");
+    setIsLoading(true);
 
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, message }),
       });
 
       if (response.ok) {
-        setStatus("success");
-        setStatusMessage("Message envoyé avec succès !");
+        toast.success("Message envoyé avec succès !");
         setName("");
         setPhone("");
         setMessage("");
       } else {
-        setStatus("error");
-        setStatusMessage("Une erreur est survenue lors de l'envoi du message.");
+        toast.error("Une erreur est survenue lors de l'envoi du message.");
       }
-    } catch (error) {
-      setStatus("error");
-      setStatusMessage(
-        "Une erreur est survenue. Veuillez réessayer plus tard."
-      );
+    } catch {
+      toast.error("Une erreur est survenue. Veuillez réessayer plus tard.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -96,23 +86,9 @@ export function ContactForm() {
           required
         />
       </div>
-      <Button
-        type="submit"
-        className="w-full md:w-auto"
-        disabled={status === "loading"}
-      >
-        {status === "loading" ? "Envoi en cours..." : "Envoyer"}
+      <Button type="submit" className="w-full md:w-auto" disabled={isLoading}>
+        {isLoading ? "Envoi en cours..." : "Envoyer"}
       </Button>
-
-      {status !== "idle" && (
-        <p
-          className={`text-sm ${
-            status === "success" ? "text-green-600" : "text-red-600"
-          }`}
-        >
-          {statusMessage}
-        </p>
-      )}
     </form>
   );
 }

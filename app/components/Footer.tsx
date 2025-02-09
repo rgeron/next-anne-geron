@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { ContactForm } from "./ContactForm";
+import { ContactForm } from "./contact-form";
 
 export function Footer() {
   const carouselImages = [
