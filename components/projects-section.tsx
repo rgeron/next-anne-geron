@@ -135,10 +135,10 @@ export function ProjectsSection() {
   return (
     <section
       id="projects-section"
-      className="container mx-auto py-8 md:py-24 space-y-8 md:space-y-16 px-4 md:px-6 bg-[#F5F0E8] rounded-3xl"
+      className="container mx-auto py-8 md:py-24 space-y-8 md:space-y-16 px-4 md:px-6 bg-[#8B8589] rounded-3xl"
     >
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 md:mb-12 text-center">
+        <h2 className="text-2xl md:text-4xl font-mono font-bold tracking-tighter mb-6 md:mb-12 text-center text-white">
           Mes Publications
         </h2>
         <ScrollArea className="w-full">
@@ -152,8 +152,8 @@ export function ProjectsSection() {
       </div>
 
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 md:mb-12 text-center">
-          Mes Vidéos
+        <h2 className="text-2xl md:text-4xl font-mono font-bold tracking-tighter mb-6 md:mb-12 text-center text-white">
+          Extraits vidéos d&apos;une conférence
         </h2>
         <ScrollArea className="w-full">
           <div className="flex space-x-4 pb-4">
@@ -168,7 +168,7 @@ export function ProjectsSection() {
       </div>
 
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 md:mb-12 text-center">
+        <h2 className="text-2xl md:text-4xl font-mono font-bold  tracking-tighter mb-6 md:mb-12 text-center text-white">
           Mes Podcasts
         </h2>
         <ScrollArea className="w-full">

@@ -11,25 +11,25 @@ const defaultQuotes = [
     text: "Ma raison d'être est d'éduquer au bien-vieillir et d'inspirer la confiance dans le dernier tiers temps de la vie.",
   },
   {
-    text: "Parce qu'il faut vivre, vieillir est une chance et mourir une nécessité",
+    text: "Parce qu'il faut vivre, vieillir est une chance et mourir une nécessité.",
   },
   {
-    text: "Vieillir c'est chiant et on n'a rien trouvé de mieux pour vivre",
+    text: "Vieillir c'est chiant et on n'a rien trouvé de mieux pour vivre.",
   },
   {
-    text: "Nos parents et l'école nous apprennent à grandir puis nous sommes livrés à nous même pour vieillir",
+    text: "Nos parents et l'école nous apprennent à grandir puis nous sommes livrés à nous même pour vieillir.",
   },
   {
-    text: "Vieillir et mourir c'est effrayant car c'est se diriger sans freins vers des territoires inconnus sans aide des aînés",
+    text: "Vieillir et mourir c'est effrayant car c'est se diriger sans freins vers des territoires inconnus sans aide des aînés.",
   },
   {
     text: "La beauté et la performance sont l'adage du jeunisme. La connaissance et l'expérience sont l'adage de la maturité.",
   },
   {
-    text: "La jeunesse apprend, la vieillesse transmet",
+    text: "La jeunesse apprend, la vieillesse transmet.",
   },
   {
-    text: "La connaissance est la lampe qui éclaire le chemin",
+    text: "La connaissance est la lampe qui éclaire le chemin.",
   },
   {
     text: "La performance commerciale en prévoyance nécessite l'apport de connaissances culturelles et psychosociales aux équipes.",
@@ -114,9 +114,9 @@ export function Hero() {
           <Image
             src="/images/logo.jpg"
             alt="Logo"
-            width={400}
-            height={200}
-            className="mb-12"
+            width={600}
+            height={300}
+            className="mb-2"
             priority
           />
           <div className="relative h-[200px] w-full max-w-2xl mx-auto px-4">
@@ -129,7 +129,7 @@ export function Hero() {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0 flex items-center justify-center text-center"
               >
-                <p className="text-xl md:text-2xl lg:text-3xl font-playfair italic text-gray-800">
+                <p className="text-xl md:text-2xl lg:text-3xl font-medium italic text-gray-800">
                   {defaultQuotes[currentQuoteIndex].text}
                 </p>
               </motion.div>
