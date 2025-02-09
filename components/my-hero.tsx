@@ -101,14 +101,15 @@ export function Hero() {
               <div className="max-w-prose bg-white text-black p-4 lg:p-6 mb-6">
                 <p className="text-sm sm:text-base lg:text-lg font-medium mb-4 lg:mb-6">
                   Gérontologue et thérapeute spécialisée dans le vieillissement,
-                  avec une expertise de plus de 20 ans dans l'accompagnement des
-                  seniors et des familles. J'ai introduit le métier de funeral
-                  planner en France, sensibilisant à l'importance de préparer
-                  ses funérailles avec ou sans contrat financier.
+                  avec une expertise de plus de 20 ans dans
+                  l&apos;accompagnement des seniors et des familles. J&apos;ai
+                  introduit le métier de funeral planner en France,
+                  sensibilisant à l&apos;importance de préparer ses funérailles
+                  avec ou sans contrat financier.
                 </p>
 
                 <p className="text-sm sm:text-base lg:text-lg font-medium mb-4 lg:mb-6">
-                  Formatrice et conférencière, j'œuvre pour démystifier les
+                  Formatrice et conférencière, j&apos;œuvre pour démystifier les
                   enjeux du bien-vieillir et de la fin de vie, en proposant des
                   outils pédagogiques et la création de supports pratiques.
                 </p>
@@ -118,9 +119,9 @@ export function Hero() {
                   prévoyance, je collabore avec des mutuelles, des caisses de
                   retraite, et des acteurs sociaux. Récemment certifiée
                   Mandataire Judiciaire à la Protection des Majeurs (MJPM),
-                  j'élargis mon champ d'action pour accompagner les personnes
-                  vulnérables dans la gestion de leurs droits et de leur
-                  autonomie avec empathie et éthique.
+                  j&apos;élargis mon champ d&apos;action pour accompagner les
+                  personnes vulnérables dans la gestion de leurs droits et de
+                  leur autonomie avec empathie et éthique.
                 </p>
               </div>
             </motion.div>

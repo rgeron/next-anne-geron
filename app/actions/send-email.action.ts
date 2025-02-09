@@ -37,7 +37,10 @@ export async function sendEmail(formData: FormData) {
     });
 
     return { success: true };
-  } catch (error) {
-    return { error: "Failed to send email" };
+  } catch (error: unknown) {
+    console.error("Failed to send email:", error);
+    return {
+      error: error instanceof Error ? error.message : "Failed to send email",
+    };
   }
 }
