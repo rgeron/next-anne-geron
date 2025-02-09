@@ -1,49 +1,29 @@
+import { sendEmail } from "@/app/actions/send-email.action";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useTransition } from "react";
 import { toast } from "sonner";
 
 export function ContactForm() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  async function onSubmit(formData: FormData) {
+    startTransition(async () => {
+      const result = await sendEmail(formData);
 
-    if (!name || !phone || !message) {
-      toast.error("Veuillez remplir tous les champs.");
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, message }),
-      });
-
-      if (response.ok) {
-        toast.success("Message envoyé avec succès !");
-        setName("");
-        setPhone("");
-        setMessage("");
-      } else {
-        toast.error("Une erreur est survenue lors de l'envoi du message.");
+      if (result.error) {
+        toast.error(result.error);
+        return;
       }
-    } catch {
-      toast.error("Une erreur est survenue. Veuillez réessayer plus tard.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
+
+      toast.success("Message envoyé avec succès !");
+      (document.getElementById("contact-form") as HTMLFormElement).reset();
+    });
+  }
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit}>
+    <form id="contact-form" action={onSubmit} className="space-y-6">
       <h2 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
         Contactez-moi !
       </h2>
@@ -52,13 +32,7 @@ export function ContactForm() {
           <label htmlFor="name" className="text-sm font-medium">
             Nom et prénom
           </label>
-          <Input
-            id="name"
-            placeholder="Votre nom"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+          <Input id="name" name="name" placeholder="Votre nom" required />
         </div>
         <div className="space-y-2">
           <label htmlFor="phone" className="text-sm font-medium">
@@ -66,9 +40,8 @@ export function ContactForm() {
           </label>
           <Input
             id="phone"
+            name="phone"
             placeholder="Votre numéro de téléphone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
             required
           />
         </div>
@@ -79,15 +52,14 @@ export function ContactForm() {
         </label>
         <Textarea
           id="message"
+          name="message"
           placeholder="Votre message"
           className="min-h-[150px]"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
           required
         />
       </div>
-      <Button type="submit" className="w-full md:w-auto" disabled={isLoading}>
-        {isLoading ? "Envoi en cours..." : "Envoyer"}
+      <Button type="submit" className="w-full md:w-auto" disabled={isPending}>
+        {isPending ? "Envoi en cours..." : "Envoyer"}
       </Button>
     </form>
   );
