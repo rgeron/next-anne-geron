@@ -1,5 +1,6 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { CahierCard } from "./projects/cahier-card";
+import { PodcastPlayerCard } from "./projects/podcast-player-card";
 import { YTBCard } from "./projects/ytb-card";
 
 const cahiers = [
@@ -108,6 +109,28 @@ const videos = [
   },
 ];
 
+const podcasts = [
+  {
+    title: "Empathie, Sympathie, Compassion",
+    src: "/podcasts/p1Empathie.mp4",
+    startTime: 50,
+    endTime: 180, // 3min
+  },
+  {
+    title: "Histoire et réglementation funéraire",
+    src: "/podcasts/p2Histoire.mp4",
+    startTime: 51,
+    endTime: 155, // 2min35s
+  },
+  {
+    title:
+      "Les 3 transitions : assurance, épargne, risque projet décès obsèques",
+    src: "/podcasts/p3Assurance.mp4",
+    startTime: 127, // 2min07s
+    endTime: 223, // 3min43s
+  },
+];
+
 export function ProjectsSection() {
   return (
     <section className="container py-24 space-y-16">
@@ -133,6 +156,20 @@ export function ProjectsSection() {
           <div className="grid grid-rows-2 auto-cols-[280px] grid-flow-col gap-4 p-4">
             {videos.map((video, index) => (
               <YTBCard key={index} {...video} />
+            ))}
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </div>
+
+      <div>
+        <h2 className="text-3xl font-bold tracking-tighter mb-12">
+          Mes Podcasts
+        </h2>
+        <ScrollArea className="w-full whitespace-nowrap">
+          <div className="flex w-max space-x-4 p-4">
+            {podcasts.map((podcast, index) => (
+              <PodcastPlayerCard key={index} {...podcast} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
