@@ -32,7 +32,7 @@ export function ContactForm() {
         className={`${agrandirRegular.className} grid grid-cols-1 md:grid-cols-2 gap-6`}
       >
         <div className="space-y-3">
-          <label htmlFor="name" className="text-base font-medium">
+          <label htmlFor="name" className="text-base font-semibold">
             Nom et prénom
           </label>
           <Input
@@ -40,11 +40,11 @@ export function ContactForm() {
             name="name"
             placeholder="Votre nom"
             required
-            className="h-12 text-lg"
+            className="h-12 text-lg bg-white"
           />
         </div>
         <div className="space-y-3">
-          <label htmlFor="phone" className="text-base font-medium">
+          <label htmlFor="phone" className="text-base font-semibold">
             Numéro de téléphone
           </label>
           <Input
@@ -52,19 +52,19 @@ export function ContactForm() {
             name="phone"
             placeholder="Votre numéro de téléphone"
             required
-            className="h-12 text-lg"
+            className="h-12 text-lg bg-white"
           />
         </div>
       </div>
       <div className="space-y-3">
-        <label htmlFor="message" className="text-base font-medium">
+        <label htmlFor="message" className="text-base font-semibold">
           Message
         </label>
         <Textarea
           id="message"
           name="message"
           placeholder="Votre message"
-          className="min-h-[200px] text-lg"
+          className="min-h-[200px] text-lg bg-white"
           required
         />
       </div>
