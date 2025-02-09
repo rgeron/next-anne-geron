@@ -19,8 +19,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-white text-black py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-white text-black border-t border-gray-200">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <ContactForm />
