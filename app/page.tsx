@@ -1,8 +1,10 @@
-import { Footer } from "./components/Footer";
+import { Hero } from "@/components/my-hero";
+import { Footer } from "../components/my-footer";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_auto] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="flex flex-col min-h-screen">
+      <Hero />
       <Footer />
     </div>
   );
