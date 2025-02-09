@@ -71,7 +71,7 @@ export function PodcastPlayerCard(props: PodcastPlayerProps) {
   return (
     <Card className="w-[280px]">
       <CardHeader>
-        <CardTitle className="text-lg line-clamp-2">{props.title}</CardTitle>
+        <CardTitle className="text-lg">{props.title}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <audio ref={audioRef} src={props.src} />
