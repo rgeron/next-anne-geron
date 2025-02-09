@@ -129,8 +129,8 @@ export function ProjectsSection() {
         <h2 className="text-3xl font-bold tracking-tighter mb-12">
           Mes Vidéos
         </h2>
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex w-max space-x-4 p-4">
+        <ScrollArea className="w-full">
+          <div className="grid grid-rows-2 auto-cols-[280px] grid-flow-col gap-4 p-4">
             {videos.map((video, index) => (
               <YTBCard key={index} {...video} />
             ))}
