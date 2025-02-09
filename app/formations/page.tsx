@@ -14,49 +14,49 @@ const themes = [
   {
     title: "Le funéraire",
     description:
-      "Une exploration approfondie des pratiques funéraires contemporaines, leur évolution et leur importance dans notre société. Cette formation aborde les aspects pratiques, émotionnels et culturels des rituels funéraires.",
+      "Exploration des pratiques funéraires contemporaines et leur évolution dans notre société, couvrant les aspects pratiques et culturels.",
     icon: <ScrollText className="h-7 w-7 bg-white" />,
   },
   {
     title: "Ritualisation, inhumation et crémation",
     description:
-      "Découvrez les différentes pratiques de ritualisation, les spécificités de l'inhumation et de la crémation, ainsi que leur signification culturelle et spirituelle dans notre société moderne.",
+      "Les différentes pratiques de ritualisation et leur signification culturelle, focus sur l'inhumation et la crémation.",
     icon: <BookOpen className="h-7 w-7 bg-white" />,
   },
   {
     title: "Qu'est-ce que la mort?",
     description:
-      "Une exploration philosophique et pratique de la mort, son impact sur notre société et comment mieux l'appréhender.",
+      "Approche philosophique et pratique de la mort et son impact sociétal.",
     icon: <ScrollText className="h-7 w-7 bg-white" />,
   },
   {
     title: "Grand âge et dépendance",
     description:
-      "Comprendre les enjeux du vieillissement et de la dépendance, et comment accompagner au mieux les personnes âgées.",
+      "Les enjeux du vieillissement et l'accompagnement des personnes âgées dépendantes.",
     icon: <BookOpen className="h-7 w-7 bg-white" />,
   },
   {
     title: "Traverser le deuil",
     description:
-      "Un accompagnement pour comprendre et traverser les différentes étapes du deuil, avec des outils pratiques et du soutien émotionnel.",
+      "Guide pratique des étapes du deuil avec outils d'accompagnement et soutien.",
     icon: <ScrollText className="h-7 w-7 bg-white" />,
   },
   {
     title: "Comprendre les contrats obsèques",
     description:
-      "Une formation détaillée sur les aspects juridiques et pratiques des contrats obsèques, pour mieux conseiller et accompagner.",
+      "Aspects juridiques et pratiques des contrats obsèques pour un meilleur accompagnement.",
     icon: <BookOpen className="h-7 w-7 bg-white" />,
   },
   {
     title: "Transmettre ses expériences de vie",
     description:
-      "Apprendre à valoriser et partager son vécu, ses connaissances et sa sagesse avec les générations futures.",
+      "Méthodes pour partager son vécu et sa sagesse avec les générations futures.",
     icon: <ScrollText className="h-7 w-7 bg-white" />,
   },
   {
     title: "La retraite 3ème temps de la vie",
     description:
-      "Une approche positive et pratique pour préparer et vivre pleinement sa retraite comme une nouvelle étape enrichissante.",
+      "Préparation et approche positive pour vivre pleinement cette nouvelle étape.",
     icon: <BookOpen className="h-7 w-7 bg-white" />,
   },
 ];
@@ -64,8 +64,8 @@ const themes = [
 export default function FormationsPage() {
   return (
     <main className="container mx-auto px-4 py-8 mt-10">
-      <div className="flex flex-col items-center mb-12">
-        <h1 className="text-4xl font-bold mb-8">Formations</h1>
+      <div className="flex flex-col items-center mb-8">
+        <h1 className="text-4xl font-bold mb-2 underline">Formations</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -74,9 +74,11 @@ export default function FormationsPage() {
             key={index}
             className="p-6 rounded-lg border border-gray-200 hover:border-primary/50 transition-colors"
           >
-            <div className="mb-4 p-2 rounded-full w-fit">{theme.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{theme.title}</h3>
-            <p className="text-gray-600">{theme.description}</p>
+            <div className="mb-2 p-2 rounded-full w-fit">{theme.icon}</div>
+            <h3 className="text-lg font-mono font-semibold mb-2">
+              {theme.title}
+            </h3>
+            <p className="text-gray-600 text-base">{theme.description}</p>
           </div>
         ))}
       </div>
@@ -85,9 +87,12 @@ export default function FormationsPage() {
         <Link href="/formations/devis">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-lg py-6 px-8"
+            className="bg-primary hover:bg-primary/90 text-base sm:text-lg py-4 px-4 sm:py-6 sm:px-8"
           >
-            Demander un devis pour une formation personnalisée
+            <span className="block sm:hidden">Demander un devis</span>
+            <span className="hidden sm:block">
+              Demander un devis pour une formation personnalisée
+            </span>
           </Button>
         </Link>
       </div>
