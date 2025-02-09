@@ -23,19 +23,25 @@ export function ContactForm() {
   }
 
   return (
-    <form id="contact-form" action={onSubmit} className="space-y-6">
-      <h2 className="text-2xl mb-6" style={{ fontFamily: "Agrandir" }}>
+    <form id="contact-form" action={onSubmit} className="space-y-8">
+      <h2 className="text-3xl mb-8" style={{ fontFamily: "Agrandir" }}>
         Contactez-moi !
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-3">
+          <label htmlFor="name" className="text-base font-medium">
             Nom et prénom
           </label>
-          <Input id="name" name="name" placeholder="Votre nom" required />
+          <Input
+            id="name"
+            name="name"
+            placeholder="Votre nom"
+            required
+            className="h-12 text-lg"
+          />
         </div>
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium">
+        <div className="space-y-3">
+          <label htmlFor="phone" className="text-base font-medium">
             Numéro de téléphone
           </label>
           <Input
@@ -43,22 +49,27 @@ export function ContactForm() {
             name="phone"
             placeholder="Votre numéro de téléphone"
             required
+            className="h-12 text-lg"
           />
         </div>
       </div>
-      <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium">
+      <div className="space-y-3">
+        <label htmlFor="message" className="text-base font-medium">
           Message
         </label>
         <Textarea
           id="message"
           name="message"
           placeholder="Votre message"
-          className="min-h-[150px]"
+          className="min-h-[200px] text-lg"
           required
         />
       </div>
-      <Button type="submit" className="w-full md:w-auto" disabled={isPending}>
+      <Button
+        type="submit"
+        className="w-full md:w-auto text-lg h-12 px-8"
+        disabled={isPending}
+      >
         {isPending ? "Envoi en cours..." : "Envoyer"}
       </Button>
     </form>
