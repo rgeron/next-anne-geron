@@ -133,7 +133,10 @@ const podcasts = [
 
 export function ProjectsSection() {
   return (
-    <section className="container mx-auto py-8 md:py-24 space-y-8 md:space-y-16 px-4 md:px-6">
+    <section
+      id="projects-section"
+      className="container mx-auto py-8 md:py-24 space-y-8 md:space-y-16 px-4 md:px-6"
+    >
       <div>
         <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 md:mb-12">
           Mes Publications

@@ -119,7 +119,7 @@ export function Hero() {
             className="mb-12"
             priority
           />
-          <div className="relative h-[200px] flex items-center justify-center w-full">
+          <div className="relative h-[200px] w-full max-w-2xl mx-auto px-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentQuoteIndex}
@@ -127,9 +127,9 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="absolute inset-0"
+                className="absolute inset-0 flex items-center justify-center text-center"
               >
-                <p className="text-2xl lg:text-3xl font-serif italic text-gray-800">
+                <p className="text-xl md:text-2xl lg:text-3xl font-serif italic text-gray-800">
                   {defaultQuotes[currentQuoteIndex].text}
                 </p>
               </motion.div>
