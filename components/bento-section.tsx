@@ -1,4 +1,17 @@
-import { FlipCard } from "./ui/flip-card";
+import Link from "next/link";
+
+function BentoCard(props: { title: string; href: string; className?: string }) {
+  return (
+    <Link
+      href={props.href}
+      className={`group block h-full w-full rounded-xl bg-gradient-to-br from-violet-400 to-indigo-600 p-8 text-white shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl ${props.className}`}
+    >
+      <div className="flex h-full w-full items-center justify-center text-center text-2xl font-bold">
+        {props.title}
+      </div>
+    </Link>
+  );
+}
 
 export function BentoSection() {
   return (
@@ -6,40 +19,25 @@ export function BentoSection() {
       <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 auto-rows-[200px]">
         {/* Formations - Left side */}
         <div className="md:col-span-3 lg:col-span-4 row-span-2">
-          <FlipCard
-            frontTitle="Formations"
-            backContent="Je conçois et anime des formations sur mesure adaptées aux enjeux spécifiques de chaque organisation. Intégrant une démarche de responsabilité sociétale (RSE) je favorise une approche éthique, durable, personnelle et collective."
-          />
+          <BentoCard title="Formations" href="/formations" />
         </div>
 
         {/* MJPM - Top middle */}
         <div className="md:col-span-6 lg:col-span-4">
-          <FlipCard
-            frontTitle="Mandataire Judiciaire à la Protection des Majeurs"
-            backContent="Content coming soon..."
+          <BentoCard
+            title="Mandataire Judiciaire à la Protection des Majeurs"
+            href="/mandataire"
           />
         </div>
 
         {/* Conferences - Right side */}
         <div className="md:col-span-3 lg:col-span-4 row-span-2">
-          <FlipCard
-            frontTitle="Conférences & Ateliers"
-            backContent="Je crée et j'anime des conférences sur mesure, conçues pour sensibiliser les participants à des thématiques clés et engager des discussions enrichissantes. Ces conférences peuvent s'accompagner d'ateliers pratiques."
-          />
+          <BentoCard title="Conférences & Ateliers" href="/conferences" />
         </div>
 
-        {/* Bottom middle cards */}
-        <div className="md:col-span-3 lg:col-span-2">
-          <FlipCard
-            frontTitle="Sante Partners"
-            backContent="Content coming soon..."
-          />
-        </div>
-        <div className="md:col-span-3 lg:col-span-2">
-          <FlipCard
-            frontTitle="Équipe avec Blaise et Marie"
-            backContent="Content coming soon..."
-          />
+        {/* Partners */}
+        <div className="md:col-span-6 lg:col-span-4">
+          <BentoCard title="Mes Partenaires" href="/partenaires" />
         </div>
       </div>
     </section>
