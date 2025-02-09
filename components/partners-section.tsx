@@ -33,15 +33,15 @@ export function PartnersSection() {
 
   return (
     <section className="py-16 overflow-hidden bg-gray-50">
-      <div className="container mx-auto px-4 mb-8">
-        <h2 className="text-4xl text-center mb-12 font-agrandir">
+      <div className="container mx-auto px-4 mb-6">
+        <h2 className="text-4xl text-center mb-6 font-agrandir">
           Nous avons eu des projets ensemble
         </h2>
       </div>
 
       {/* First row of logos */}
       <div className="relative flex overflow-x-hidden group">
-        <div className="animate-marquee flex items-center space-x-2 py-2">
+        <div className="animate-marquee flex items-center space-x-4 py-2">
           {partners1.map((logo) => (
             <div
               key={logo}
@@ -58,7 +58,7 @@ export function PartnersSection() {
           ))}
         </div>
         <div
-          className="animate-marquee flex items-center space-x-2 py-2"
+          className="animate-marquee flex items-center space-x-4 py-2"
           aria-hidden="true"
         >
           {partners1.map((logo) => (
@@ -80,7 +80,7 @@ export function PartnersSection() {
 
       {/* Second row of logos - moving in opposite direction */}
       <div className="relative flex overflow-x-hidden group mt-8">
-        <div className="animate-marquee-reverse flex items-center space-x-6 py-4">
+        <div className="animate-marquee-reverse flex items-center space-x-4 py-2">
           {partners2.map((logo) => (
             <div
               key={logo}
@@ -97,7 +97,7 @@ export function PartnersSection() {
           ))}
         </div>
         <div
-          className="animate-marquee-reverse flex items-center space-x-6 py-4"
+          className="animate-marquee-reverse flex items-center space-x-4 py-2"
           aria-hidden="true"
         >
           {partners2.map((logo) => (
