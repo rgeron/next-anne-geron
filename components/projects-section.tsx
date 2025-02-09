@@ -133,13 +133,13 @@ const podcasts = [
 
 export function ProjectsSection() {
   return (
-    <section className="container py-24 space-y-16">
+    <section className="container mx-auto py-8 md:py-24 space-y-8 md:space-y-16 px-4 md:px-6">
       <div>
-        <h2 className="text-3xl font-bold tracking-tighter mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 md:mb-12">
           Mes Publications
         </h2>
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex w-max space-x-4 p-4">
+        <ScrollArea className="w-full">
+          <div className="flex space-x-4 pb-4">
             {cahiers.map((cahier, index) => (
               <CahierCard key={index} {...cahier} />
             ))}
@@ -149,13 +149,15 @@ export function ProjectsSection() {
       </div>
 
       <div>
-        <h2 className="text-3xl font-bold tracking-tighter mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 md:mb-12">
           Mes Vidéos
         </h2>
         <ScrollArea className="w-full">
-          <div className="grid grid-rows-2 auto-cols-[280px] grid-flow-col gap-4 p-4">
+          <div className="flex space-x-4 pb-4">
             {videos.map((video, index) => (
-              <YTBCard key={index} {...video} />
+              <div key={index} className="w-[280px] flex-none">
+                <YTBCard {...video} />
+              </div>
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -163,11 +165,11 @@ export function ProjectsSection() {
       </div>
 
       <div>
-        <h2 className="text-3xl font-bold tracking-tighter mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 md:mb-12">
           Mes Podcasts
         </h2>
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex w-max space-x-4 p-4">
+        <ScrollArea className="w-full">
+          <div className="flex space-x-4 pb-4">
             {podcasts.map((podcast, index) => (
               <PodcastPlayerCard key={index} {...podcast} />
             ))}
