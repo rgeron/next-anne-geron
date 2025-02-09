@@ -17,7 +17,7 @@ export function FormationCard({
 
   return (
     <div
-      className="h-[300px] [perspective:1000px] cursor-pointer"
+      className="h-[250px] [perspective:1000px] cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div
