@@ -86,7 +86,7 @@ const conferences = [
 
 export default function ConferencesPage() {
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8 mt-10">
       <div className="flex flex-col items-center mb-12">
         <h1 className="text-4xl font-bold mb-8">Conférences & Ateliers</h1>
       </div>

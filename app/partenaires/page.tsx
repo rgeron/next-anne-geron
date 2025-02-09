@@ -11,7 +11,7 @@ export function metadata() {
 
 export default function PartenairesPage() {
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8 mt-10">
       <h1 className="text-4xl font-bold mb-12 text-center">Nos Partenaires</h1>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
