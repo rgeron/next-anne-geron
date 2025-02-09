@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { BookOpen, ScrollText } from "lucide-react";
+import Link from "next/link";
 
 export function metadata() {
   return {
@@ -65,18 +66,9 @@ export default function FormationsPage() {
     <main className="container mx-auto px-4 py-8">
       <div className="flex flex-col items-center mb-12">
         <h1 className="text-4xl font-bold mb-8">Formations</h1>
-        <p className="text-lg text-center max-w-3xl mb-8">
-          Je conçois et anime des formations sur mesure adaptées aux enjeux
-          spécifiques de chaque organisation. Intégrant une démarche de
-          responsabilité sociétale (RSE) je favorise une approche éthique,
-          durable, personnelle et collective.
-        </p>
-        <Button size="lg" className="bg-primary hover:bg-primary/90">
-          Demander un devis pour une formation personnalisée
-        </Button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {themes.map((theme, index) => (
           <div
             key={index}
@@ -87,6 +79,17 @@ export default function FormationsPage() {
             <p className="text-gray-600">{theme.description}</p>
           </div>
         ))}
+      </div>
+
+      <div className="flex justify-center w-full">
+        <Link href="/formations/devis">
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-lg py-6 px-8"
+          >
+            Demander un devis pour une formation personnalisée
+          </Button>
+        </Link>
       </div>
     </main>
   );

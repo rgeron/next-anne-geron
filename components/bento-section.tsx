@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ConferencesCard } from "./bento/conferences-card";
+import { FormationsCard } from "./bento/formations-card";
 
 function BentoCard(props: {
   title: string;
@@ -31,7 +33,7 @@ export function BentoSection() {
       <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 auto-rows-[200px]">
         {/* Formations - Left side */}
         <div className="md:col-span-3 lg:col-span-4 row-span-2">
-          <BentoCard title="Formations" href="/formations" variant="light" />
+          <FormationsCard />
         </div>
 
         {/* MJPM - Top middle */}
@@ -45,11 +47,7 @@ export function BentoSection() {
 
         {/* Conferences - Right side */}
         <div className="md:col-span-3 lg:col-span-4 row-span-2">
-          <BentoCard
-            title="Conférences & Ateliers"
-            href="/conferences"
-            variant="light"
-          />
+          <ConferencesCard />
         </div>
 
         {/* Partners */}
