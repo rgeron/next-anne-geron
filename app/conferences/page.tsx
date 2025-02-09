@@ -25,61 +25,61 @@ const conferences = [
   {
     title: "Accepter la mort et le symbolisme des portes",
     description:
-      "Explorer les rituels et symboles qui nous aident à appréhender la fin de vie, en s'appuyant sur différentes approches culturelles pour mieux comprendre et accepter cette transition naturelle.",
+      "Exploration des rituels et symboles de la fin de vie à travers différentes approches culturelles.",
     icon: <DoorOpen className="h-7 w-7 bg-white" />,
   },
   {
     title: "Bien vieillir toujours heureux",
     description:
-      "Découvrir les clés d'un vieillissement épanoui à travers l'activité physique adaptée, la stimulation cognitive et le maintien du lien social, essentiels pour préserver l'autonomie et la joie de vivre.",
+      "Les clés d'un vieillissement épanoui : activité physique, stimulation cognitive et lien social.",
     icon: <Smile className="h-7 w-7 bg-white" />,
   },
   {
     title: "Cycle des aidants",
     description:
-      "Accompagner les aidants familiaux dans leur rôle crucial, en abordant la gestion du stress, l'organisation quotidienne et les ressources disponibles pour prévenir l'épuisement.",
+      "Guide pratique pour les aidants : gestion du stress, organisation et ressources disponibles.",
     icon: <Users className="h-7 w-7 bg-white" />,
   },
   {
     title: "Je décide et je protège les miens",
     description:
-      "Comprendre les dispositifs juridiques de protection (mandat de protection future, directives anticipées) pour garantir le respect de ses volontés et protéger ses proches.",
+      "Les dispositifs juridiques pour protéger ses volontés et ses proches.",
     icon: <Shield className="h-7 w-7 bg-white" />,
   },
   {
     title: "La perte d'autonomie",
     description:
-      "Anticiper et s'adapter à la perte d'autonomie en explorant les solutions d'aménagement du domicile, les aides techniques et humaines disponibles pour maintenir la qualité de vie.",
+      "Solutions pratiques pour maintenir la qualité de vie face à la perte d'autonomie.",
     icon: <Accessibility className="h-7 w-7 bg-white" />,
   },
   {
     title: "Les bienfaits de l'amour",
     description:
-      "Explorer l'importance des relations affectives et de l'intimité dans le grand âge, facteurs essentiels de bien-être et de santé mentale souvent négligés en gérontologie.",
+      "L'importance des relations affectives et de l'intimité dans le grand âge.",
     icon: <Heart className="h-7 w-7 bg-white" />,
   },
   {
     title: "Les dispositions juridiques de la fin de la vie",
     description:
-      "Présentation claire des droits des patients en fin de vie, des directives anticipées et de la personne de confiance, pour garantir le respect des choix personnels.",
+      "Droits des patients, directives anticipées et rôle de la personne de confiance.",
     icon: <Scale className="h-7 w-7 bg-white" />,
   },
   {
     title: "Les liens invisibles qui entravent",
     description:
-      "Identifier et comprendre les mécanismes psychologiques qui peuvent freiner l'adaptation au vieillissement, pour mieux les dépasser et vivre pleinement cette étape de vie.",
+      "Comprendre et dépasser les freins psychologiques liés au vieillissement.",
     icon: <LinkIcon className="h-7 w-7 bg-white" />,
   },
   {
     title: "Prévenir et soulager les douleurs",
     description:
-      "Approche globale de la gestion de la douleur chez la personne âgée, combinant méthodes médicales et non-médicamenteuses pour améliorer le confort quotidien.",
+      "Méthodes médicales et alternatives pour gérer la douleur chez la personne âgée.",
     icon: <Stethoscope className="h-7 w-7 bg-white" />,
   },
   {
     title: "Vivre sereinement",
     description:
-      "Développer des stratégies de résilience et d'adaptation pour faire face aux changements liés à l'âge, en cultivant l'équilibre émotionnel et le bien-être mental.",
+      "Stratégies de résilience pour s'adapter aux changements liés à l'âge.",
     icon: <Brain className="h-7 w-7 bg-white" />,
   },
 ];
@@ -87,8 +87,10 @@ const conferences = [
 export default function ConferencesPage() {
   return (
     <main className="container mx-auto px-4 py-8 mt-10">
-      <div className="flex flex-col items-center mb-12">
-        <h1 className="text-4xl font-bold mb-8">Conférences & Ateliers</h1>
+      <div className="flex flex-col items-center mb-8">
+        <h1 className="text-4xl font-bold mb-2 underline">
+          Conférences & Ateliers
+        </h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -97,9 +99,11 @@ export default function ConferencesPage() {
             key={index}
             className="p-6 rounded-lg border border-gray-200 hover:border-primary/50 transition-colors"
           >
-            <div className="mb-4 p-2 rounded-full w-fit">{conference.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{conference.title}</h3>
-            <p className="text-gray-600">{conference.description}</p>
+            <div className="mb-2 p-2 rounded-full w-fit">{conference.icon}</div>
+            <h3 className="text-lg font-mono font-semibold mb-2">
+              {conference.title}
+            </h3>
+            <p className="text-gray-600 text-base">{conference.description}</p>
           </div>
         ))}
       </div>
@@ -108,9 +112,12 @@ export default function ConferencesPage() {
         <Link href="/conferences/devis">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-lg py-6 px-8"
+            className="bg-primary hover:bg-primary/90 text-base sm:text-lg py-4 px-4 sm:py-6 sm:px-8"
           >
-            Demander un devis pour une conférence personnalisée
+            <span className="block sm:hidden">Demander un devis</span>
+            <span className="hidden sm:block">
+              Demander un devis pour une conférence personnalisée
+            </span>
           </Button>
         </Link>
       </div>
