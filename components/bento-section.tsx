@@ -28,7 +28,7 @@ function BentoCard(props: {
 
   const getColorStyles = (variant: ColorVariant = "paleCream") => {
     const colorMap = {
-      taupeGray: `${colors.taupeGray} text-gray-800 border-gray-700`,
+      taupeGray: `${colors.taupeGray} text-white border-gray-700`,
       warmBeige: `${colors.warmBeige} text-gray-800 border-amber-200`,
       paleCream: `${colors.paleCream} text-gray-800 border-gray-200`,
       softPeriwinkle: `${colors.softPeriwinkle} text-gray-800 border-blue-200`,
@@ -79,7 +79,7 @@ export function BentoSection() {
           <BentoCard
             title="Mes Partenaires"
             href="/partenaires"
-            variant="softPeriwinkle"
+            variant="taupeGray"
           />
         </div>
       </div>
