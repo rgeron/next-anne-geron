@@ -24,16 +24,6 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <ContactForm />
-            <div className="mt-20 flex justify-center">
-              <Image
-                src="/images/logo.jpg"
-                alt="AB Logo"
-                width={112}
-                height={112}
-                className="h-28 w-auto"
-                priority
-              />
-            </div>
           </div>
 
           <div className="space-y-8">
