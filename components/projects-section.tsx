@@ -1,21 +1,8 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { CahierCard } from "./projects/cahier-card";
+import { YTBCard } from "./projects/ytb-card";
 
-type Project = {
-  title: string | React.ReactNode;
-  description: string;
-  pdfUrl?: string;
-  pdfs?: { label: string; url: string }[];
-};
-
-const projects: Project[] = [
+const cahiers = [
   {
     title: "LIVRE DE MÉMOIRES",
     description:
@@ -36,7 +23,9 @@ const projects: Project[] = [
       <>
         Cahier Malakoff-Médéric
         <br />
-        <span className="text-base">À l'usage des gens que j'aime</span>
+        <span className="text-base">
+          À l&apos;usage des gens que j&apos;aime
+        </span>
       </>
     ),
     description: "",
@@ -56,58 +45,99 @@ const projects: Project[] = [
   },
 ];
 
+const videos = [
+  {
+    title: "2 ans, le temps du deuil",
+    videoId: "tqf9iDUv5cQ",
+    image: "https://i3.ytimg.com/vi/tqf9iDUv5cQ/maxresdefault.jpg",
+  },
+  {
+    title: "S'inspirer des autres cultures",
+    videoId: "nOhDOKKUOJg",
+    image: "https://i3.ytimg.com/vi/nOhDOKKUOJg/maxresdefault.jpg",
+  },
+  {
+    title: "Transmettre ses souvenirs",
+    videoId: "pO09bXbSsqg",
+    image: "https://i3.ytimg.com/vi/pO09bXbSsqg/maxresdefault.jpg",
+  },
+  {
+    title: "Quel prix pour une demeure d'éternité",
+    videoId: "i2euZkYQ4-I",
+    image: "https://i3.ytimg.com/vi/i2euZkYQ4-I/maxresdefault.jpg",
+  },
+  {
+    title: "Préparer les formalités",
+    videoId: "WWPuWj0YDWQ",
+    image: "https://i3.ytimg.com/vi/WWPuWj0YDWQ/maxresdefault.jpg",
+  },
+  {
+    title: "Où se faire enterrer",
+    videoId: "pBsdVEEibGU",
+    image: "https://i3.ytimg.com/vi/pBsdVEEibGU/maxresdefault.jpg",
+  },
+  {
+    title: "Les soins palliatifs",
+    videoId: "4wABfaLkayU",
+    image: "https://i3.ytimg.com/vi/4wABfaLkayU/maxresdefault.jpg",
+  },
+  {
+    title: "Les rituels indispensables dans les chemins du deuil",
+    videoId: "LmIDsKYlGnw",
+    image: "https://i3.ytimg.com/vi/LmIDsKYlGnw/maxresdefault.jpg",
+  },
+  {
+    title: "Les deuils symboliques",
+    videoId: "A6PHPLGx7pA",
+    image: "https://i3.ytimg.com/vi/A6PHPLGx7pA/maxresdefault.jpg",
+  },
+  {
+    title: "Le don d'organes",
+    videoId: "-PjkrkdbmSE",
+    image: "https://i3.ytimg.com/vi/-PjkrkdbmSE/maxresdefault.jpg",
+  },
+  {
+    title: "La crémation",
+    videoId: "XOi6841Vbso",
+    image: "https://i3.ytimg.com/vi/XOi6841Vbso/maxresdefault.jpg",
+  },
+  {
+    title: "Anticiper ses funérailles",
+    videoId: "Gz0Z6a8duAU",
+    image: "https://i3.ytimg.com/vi/Gz0Z6a8duAU/maxresdefault.jpg",
+  },
+];
+
 export function ProjectsSection() {
   return (
-    <section className="container py-24">
-      <h2 className="text-3xl font-bold tracking-tighter mb-12">
-        Mes Réalisations
-      </h2>
-      <ScrollArea className="w-full whitespace-nowrap">
-        <div className="flex w-max space-x-4 p-4">
-          {projects.map((project, index) => (
-            <Card key={index} className="w-[350px] flex flex-col">
-              <CardHeader>
-                <CardTitle className="whitespace-pre-wrap">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col flex-1">
-                {project.description && (
-                  <CardDescription className="mb-4 whitespace-normal flex-1">
-                    {project.description}
-                  </CardDescription>
-                )}
-                <div className="flex gap-2 mt-auto">
-                  {project.pdfs ? (
-                    project.pdfs.map((pdf, pdfIndex) => (
-                      <Button key={pdfIndex} asChild>
-                        <a
-                          href={pdf.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {pdf.label}
-                        </a>
-                      </Button>
-                    ))
-                  ) : (
-                    <Button asChild>
-                      <a
-                        href={project.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Voir le PDF
-                      </a>
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+    <section className="container py-24 space-y-16">
+      <div>
+        <h2 className="text-3xl font-bold tracking-tighter mb-12">
+          Mes Publications
+        </h2>
+        <ScrollArea className="w-full whitespace-nowrap">
+          <div className="flex w-max space-x-4 p-4">
+            {cahiers.map((cahier, index) => (
+              <CahierCard key={index} {...cahier} />
+            ))}
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </div>
+
+      <div>
+        <h2 className="text-3xl font-bold tracking-tighter mb-12">
+          Mes Vidéos
+        </h2>
+        <ScrollArea className="w-full whitespace-nowrap">
+          <div className="flex w-max space-x-4 p-4">
+            {videos.map((video, index) => (
+              <YTBCard key={index} {...video} />
+            ))}
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </div>
     </section>
   );
 }
