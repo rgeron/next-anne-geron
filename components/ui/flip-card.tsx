@@ -14,7 +14,7 @@ export function FlipCard(props: {
         </div>
         {/* Back */}
         <div className="absolute inset-0 h-full w-full rounded-xl bg-gradient-to-br from-violet-600 to-indigo-800 p-8 text-white shadow-xl [transform:rotateY(180deg)] backface-hidden">
-          <div className="flex h-full items-center justify-center text-center">
+          <div className="flex h-full items-center justify-center text-center [transform:rotateY(180deg)]">
             {props.backContent}
           </div>
         </div>
