@@ -2,23 +2,47 @@ import Link from "next/link";
 import { ConferencesCard } from "./bento/conferences-card";
 import { FormationsCard } from "./bento/formations-card";
 
+const colors = {
+  taupeGray: "bg-[#8B8589]",
+  warmBeige: "bg-[#E8DCD0]",
+  paleCream: "bg-[#F5F0E8]",
+  softPeriwinkle: "bg-[#C5CBE3]",
+  icyWhite: "bg-[#F8F9FA]",
+} as const;
+
+type ColorVariant =
+  | "taupeGray"
+  | "warmBeige"
+  | "paleCream"
+  | "softPeriwinkle"
+  | "icyWhite";
+
 function BentoCard(props: {
   title: string;
   href: string;
-  variant?: "light" | "dark";
+  variant?: ColorVariant;
   className?: string;
 }) {
   const baseStyles =
-    "group block h-full w-full rounded-xl p-8 shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl";
-  const variantStyles =
-    props.variant === "dark"
-      ? "bg-black text-white border-gray-800"
-      : "bg-white text-black border-gray-200 border-4";
+    "group block h-full w-full rounded-xl p-8 shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl border-2 border-opacity-20";
+
+  const getColorStyles = (variant: ColorVariant = "paleCream") => {
+    const colorMap = {
+      taupeGray: `${colors.taupeGray} text-gray-800 border-gray-700`,
+      warmBeige: `${colors.warmBeige} text-gray-800 border-amber-200`,
+      paleCream: `${colors.paleCream} text-gray-800 border-gray-200`,
+      softPeriwinkle: `${colors.softPeriwinkle} text-gray-800 border-blue-200`,
+      icyWhite: `${colors.icyWhite} text-gray-800 border-gray-100`,
+    };
+    return colorMap[variant];
+  };
 
   return (
     <Link
       href={props.href}
-      className={`${baseStyles} ${variantStyles} border ${props.className}`}
+      className={`${baseStyles} ${getColorStyles(props.variant)} ${
+        props.className
+      }`}
     >
       <div className="flex h-full w-full items-center justify-center text-center text-2xl font-bold">
         {props.title}
@@ -41,7 +65,7 @@ export function BentoSection() {
           <BentoCard
             title="Mandataire Judiciaire à la Protection des Majeurs"
             href="/mandataire"
-            variant="dark"
+            variant="taupeGray"
           />
         </div>
 
@@ -55,7 +79,7 @@ export function BentoSection() {
           <BentoCard
             title="Mes Partenaires"
             href="/partenaires"
-            variant="dark"
+            variant="softPeriwinkle"
           />
         </div>
       </div>

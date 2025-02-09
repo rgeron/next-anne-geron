@@ -41,15 +41,18 @@ export function Header() {
   };
 
   return (
-    <header className="bg-black text-white py-4 relative z-50">
+    <header className="bg-[#8B8589] text-white py-4 relative z-50 shadow-md">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-semibold hover:text-gray-300">
+        <Link
+          href="/"
+          className="text-xl font-semibold hover:text-gray-200 transition-colors"
+        >
           Anne Geron
         </Link>
         <nav className="relative" ref={menuRef}>
           <Button
             variant="ghost"
-            className="text-white hover:text-gray-300"
+            className="text-white hover:text-gray-200 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             Menu
@@ -57,37 +60,37 @@ export function Header() {
 
           {/* Dropdown Menu */}
           {isMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-[#F5F0E8] ring-1 ring-[#8B8589] ring-opacity-20">
               <div className="py-1">
                 <Link
                   href="/"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#E8DCD0] transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Accueil
                 </Link>
                 <Link
                   href="/formations"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#E8DCD0] transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Formations
                 </Link>
                 <Link
                   href="/conferences"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#E8DCD0] transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Conférences
                 </Link>
                 <button
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-[#E8DCD0] transition-colors"
                   onClick={() => scrollToSection("projects-section")}
                 >
                   Mes Travaux
                 </button>
                 <button
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-[#E8DCD0] transition-colors"
                   onClick={() => scrollToSection("footer")}
                 >
                   Contact
