@@ -1,3 +1,4 @@
+import { ConferenceCard } from "@/components/conferences/conference-card";
 import { Button } from "@/components/ui/button";
 import {
   Accessibility,
@@ -95,16 +96,12 @@ export default function ConferencesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {conferences.map((conference, index) => (
-          <div
+          <ConferenceCard
             key={index}
-            className="p-6 rounded-lg border border-gray-200 hover:border-primary/50 transition-colors"
-          >
-            <div className="mb-2 p-2 rounded-full w-fit">{conference.icon}</div>
-            <h3 className="text-lg font-mono font-semibold mb-2">
-              {conference.title}
-            </h3>
-            <p className="text-gray-600 text-base">{conference.description}</p>
-          </div>
+            title={conference.title}
+            description={conference.description}
+            icon={conference.icon}
+          />
         ))}
       </div>
 
