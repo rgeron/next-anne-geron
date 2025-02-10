@@ -60,25 +60,26 @@ export function BentoSection() {
           <FormationsCard />
         </div>
 
-        {/* MJPM - Top middle */}
-        <div className="md:col-span-6 lg:col-span-4">
-          <BentoCard
-            title="Mandataire Judiciaire à la Protection des Majeurs"
-            href="/mandataire"
-            variant="taupeGray"
-          />
-        </div>
-
         {/* Conferences - Right side */}
         <div className="md:col-span-3 lg:col-span-4 row-span-2">
           <ConferencesCard />
         </div>
+
+        {/* MJPM - Top middle */}
 
         {/* Partners */}
         <div className="md:col-span-6 lg:col-span-4">
           <BentoCard
             title="Mes Partenaires"
             href="/partenaires"
+            variant="taupeGray"
+          />
+        </div>
+
+        <div className="md:col-span-6 lg:col-span-4">
+          <BentoCard
+            title="Mandataire Judiciaire à la Protection des Majeurs"
+            href="/mandataire"
             variant="taupeGray"
           />
         </div>

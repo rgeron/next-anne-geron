@@ -43,7 +43,7 @@ export function CahierCard({
           ) : (
             <Button asChild>
               <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
-                Voir le PDF
+                Voir une partie du PDF
               </a>
             </Button>
           )}
