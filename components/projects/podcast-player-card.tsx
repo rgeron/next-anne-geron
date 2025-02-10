@@ -17,16 +17,27 @@ export function PodcastPlayerCard(props: PodcastPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(props.startTime);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.currentTime = props.startTime;
+      const handleLoadedMetadata = () => {
+        audioRef.current!.currentTime = props.startTime;
+        setIsReady(true);
+      };
+
+      audioRef.current.addEventListener("loadedmetadata", handleLoadedMetadata);
+      return () =>
+        audioRef.current?.removeEventListener(
+          "loadedmetadata",
+          handleLoadedMetadata
+        );
     }
   }, [props.startTime]);
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio || !isReady) return;
 
     const handleTimeUpdate = () => {
       setCurrentTime(audio.currentTime);
@@ -39,16 +50,20 @@ export function PodcastPlayerCard(props: PodcastPlayerProps) {
 
     audio.addEventListener("timeupdate", handleTimeUpdate);
     return () => audio.removeEventListener("timeupdate", handleTimeUpdate);
-  }, [props.endTime, props.startTime]);
+  }, [props.endTime, props.startTime, isReady]);
 
-  const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
+  const togglePlay = async () => {
+    if (audioRef.current && isReady) {
+      try {
+        if (isPlaying) {
+          await audioRef.current.pause();
+        } else {
+          await audioRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+      } catch (error) {
+        console.error("Playback failed:", error);
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
