@@ -29,7 +29,8 @@ const cahiers = [
         </span>
       </>
     ),
-    description: "",
+    description:
+      "Cahier dédié aux retraités pour accompagner des ateliers sur le bien vieillir, déployés dans 28 agences à travers la France.",
     pdfUrl: "/pdfs/cahier-mort-malakoff-mederic.pdf",
   },
   {
