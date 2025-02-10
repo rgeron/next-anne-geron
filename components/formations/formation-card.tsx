@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 
+import { ReactNode } from "react";
+
 type FormationCardProps = {
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: ReactNode;
 };
 
 export function FormationCard({
