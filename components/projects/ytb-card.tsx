@@ -36,7 +36,7 @@ export function YTBCard({ title, image, videoId }: YTBCardProps) {
               </div>
             </div>
           )}
-          <h3 className="text-sm font-medium text-left line-clamp-2 text-gray-700 group-hover:text-red-600 transition-colors">
+          <h3 className="text-sm font-mono text-left line-clamp-2 text-gray-700 group-hover:text-red-600 transition-colors">
             {title}
           </h3>
         </CardContent>

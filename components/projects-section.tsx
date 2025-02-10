@@ -49,14 +49,9 @@ const cahiers = [
 
 const videos = [
   {
-    title: "Quel prix pour une demeure d'éternité",
+    title: "Quel prix pour une demeure d'éternité ?",
     videoId: "i2euZkYQ4-I",
     image: "https://i3.ytimg.com/vi/i2euZkYQ4-I/maxresdefault.jpg",
-  },
-  {
-    title: "Les soins palliatifs",
-    videoId: "4wABfaLkayU",
-    image: "https://i3.ytimg.com/vi/4wABfaLkayU/maxresdefault.jpg",
   },
   {
     title: "Les rituels indispensables pour cheminer dans le deuil",
@@ -64,6 +59,11 @@ const videos = [
     image: "https://i3.ytimg.com/vi/LmIDsKYlGnw/maxresdefault.jpg",
   },
 
+  {
+    title: "Les soins palliatifs",
+    videoId: "4wABfaLkayU",
+    image: "https://i3.ytimg.com/vi/4wABfaLkayU/maxresdefault.jpg",
+  },
   {
     title: "La crémation",
     videoId: "XOi6841Vbso",
@@ -101,7 +101,7 @@ export function ProjectsSection() {
     >
       <div>
         <h2 className="text-2xl md:text-4xl font-mono font-bold tracking-tighter mb-6 md:mb-12 text-center text-white">
-          Mes travaux
+          Extraits de mes travaux
         </h2>
         <ScrollArea className="w-full">
           <div className="flex space-x-4 pb-4">
@@ -131,7 +131,7 @@ export function ProjectsSection() {
 
       <div>
         <h2 className="text-2xl md:text-4xl font-mono font-bold  tracking-tighter mb-6 md:mb-12 text-center text-white">
-          Mes Podcasts
+          Extraits de podcasts
         </h2>
         <ScrollArea className="w-full">
           <div className="flex space-x-4 pb-4">
