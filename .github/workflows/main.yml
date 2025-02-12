@@ -47,7 +47,7 @@ jobs:
           remote-password: ${{ secrets.FTP_PASSWORD }}
 
           # Path for specific folder on server for files deployment
-          remote-path: /public_html
+          remote-path: /
 
           # Port for SFTP access to server
           remote-port: 22
