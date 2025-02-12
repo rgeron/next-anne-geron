@@ -1,6 +1,7 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { CahierCard } from "./projects/cahier-card";
-import { PodcastPlayerCard } from "./projects/podcast-player-card";
+import { CardGameCard } from "./projects/card-game-card";
+import { VideoPlayerCard } from "./projects/video-player-card";
 import { YTBCard } from "./projects/ytb-card";
 
 const cahiers = [
@@ -58,7 +59,6 @@ const videos = [
     videoId: "LmIDsKYlGnw",
     image: "https://i3.ytimg.com/vi/LmIDsKYlGnw/maxresdefault.jpg",
   },
-
   {
     title: "Les soins palliatifs",
     videoId: "4wABfaLkayU",
@@ -71,25 +71,31 @@ const videos = [
   },
 ];
 
-const podcasts = [
+type AutreProduction =
+  | { title: string; videos: { title: string; src: string }[] }
+  | { title: string; images: { src: string; alt: string }[] };
+
+const autresProductions: AutreProduction[] = [
   {
-    title: "Empathie, Sympathie, Compassion",
-    src: "/podcasts/p1Empathie.mp4",
-    startTime: 50,
-    endTime: 180, // 3min
+    title: "Podcasts",
+    videos: [
+      {
+        title: "Histoire et réglementation funéraire",
+        src: "/podcasts/p2Histoire.mp4",
+      },
+      {
+        title:
+          "Les 3 transitions : assurance, épargne, risque projet décès obsèques",
+        src: "/podcasts/p3Assurance.mp4",
+      },
+    ],
   },
   {
-    title: "Histoire et réglementation funéraire",
-    src: "/podcasts/p2Histoire.mp4",
-    startTime: 51,
-    endTime: 155, // 2min35s
-  },
-  {
-    title:
-      "Les 3 transitions : assurance, épargne, risque projet décès obsèques",
-    src: "/podcasts/p3Assurance.mp4",
-    startTime: 127, // 2min07s
-    endTime: 223, // 3min43s
+    title: "Jeu de cartes pour des ateliers",
+    images: [
+      { src: "/images/jeu/jeu1.jpg", alt: "Jeu de cartes 1" },
+      { src: "/images/jeu/jeu2.jpg", alt: "Jeu de cartes 2" },
+    ],
   },
 ];
 
@@ -130,14 +136,27 @@ export function ProjectsSection() {
       </div>
 
       <div>
-        <h2 className="text-2xl md:text-4xl font-mono font-bold  tracking-tighter mb-6 md:mb-12 text-center text-white">
-          Extraits de podcasts
+        <h2 className="text-2xl md:text-4xl font-mono font-bold tracking-tighter mb-6 md:mb-12 text-center text-white">
+          Autres productions
         </h2>
         <ScrollArea className="w-full">
           <div className="flex space-x-4 pb-4">
-            {podcasts.map((podcast, index) => (
-              <PodcastPlayerCard key={index} {...podcast} />
-            ))}
+            <VideoPlayerCard
+              title={autresProductions[0].title}
+              videos={
+                "videos" in autresProductions[0]
+                  ? autresProductions[0].videos
+                  : []
+              }
+            />
+            <CardGameCard
+              title={autresProductions[1].title}
+              images={
+                "images" in autresProductions[1]
+                  ? autresProductions[1].images
+                  : []
+              }
+            />
           </div>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
