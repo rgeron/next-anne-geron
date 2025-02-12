@@ -47,7 +47,7 @@ jobs:
           remote-password: ${{ secrets.FTP_PASSWORD }}
 
           # Path for specific folder on server for files deployment
-          remote-path: /test.net/deploy-test
+          remote-path: /public_html
 
           # Port for SFTP access to server
           remote-port: 22
