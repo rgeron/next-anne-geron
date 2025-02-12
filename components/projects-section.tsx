@@ -85,7 +85,7 @@ const autresProductions: AutreProduction[] = [
       },
       {
         title:
-          "Les 3 transitions : assurance, épargne, risque projet décès obsèques",
+          "Les 3 transitions : assurance, épargne, projet obsèques",
         src: "/podcasts/p3Assurance.mp4",
       },
     ],
