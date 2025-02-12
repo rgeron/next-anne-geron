@@ -14,7 +14,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { PlayIcon } from "lucide-react";
 
 type VideoPlayerCardProps = {
@@ -42,9 +41,8 @@ export function VideoPlayerCard(props: VideoPlayerCardProps) {
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl">
-              <VisuallyHidden>
-                <DialogTitle>{video.title}</DialogTitle>
-              </VisuallyHidden>
+              <DialogTitle>{video.title}</DialogTitle>
+
               <video controls className="w-full">
                 <source src={video.src} type="video/mp4" />
                 Your browser does not support the video tag.
