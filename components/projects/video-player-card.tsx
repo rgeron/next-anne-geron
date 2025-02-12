@@ -27,7 +27,7 @@ export function VideoPlayerCard(props: VideoPlayerCardProps) {
   return (
     <Card className="w-[350px] flex flex-col">
       <CardHeader>
-        <CardTitle className="whitespace-pre-wrap">{props.title}</CardTitle>
+        <CardTitle className="whitespace-normal">{props.title}</CardTitle>
         {props.description && (
           <CardDescription>{props.description}</CardDescription>
         )}
@@ -36,9 +36,9 @@ export function VideoPlayerCard(props: VideoPlayerCardProps) {
         {props.videos.map((video, index) => (
           <Dialog key={index}>
             <DialogTrigger asChild>
-              <Button variant="outline" className="w-full flex gap-2">
+              <Button variant="outline" className="w-full flex gap-2 text-left">
                 <PlayIcon className="h-4 w-4" />
-                {video.title}
+                <span className="truncate">{video.title}</span>
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl">
