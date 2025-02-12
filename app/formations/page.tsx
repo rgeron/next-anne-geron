@@ -13,39 +13,21 @@ export function metadata() {
 
 const themes = [
   {
-    title: "Le funéraire",
-    description:
-      "Exploration des pratiques funéraires contemporaines et leur évolution dans notre société, couvrant les aspects pratiques et culturels.",
-    icon: <ScrollText className="h-7 w-7 bg-white" />,
-  },
-  {
-    title: "Ritualisation, inhumation et crémation",
-    description:
-      "Les différentes pratiques de ritualisation et leur signification culturelle, focus sur l'inhumation et la crémation.",
-    icon: <BookOpen className="h-7 w-7 bg-white" />,
-  },
-  {
-    title: "Qu'est-ce que la mort?",
-    description:
-      "Approche philosophique et pratique de la mort et son impact sociétal.",
-    icon: <ScrollText className="h-7 w-7 bg-white" />,
-  },
-  {
     title: "Grand âge et dépendance",
     description:
-      "Les enjeux du vieillissement et l'accompagnement des personnes âgées dépendantes.",
+      "Les enjeux du vieillissement et accompagnement des personnes âgées en perte d'autonomie.",
     icon: <BookOpen className="h-7 w-7 bg-white" />,
   },
   {
-    title: "Traverser le deuil",
+    title: "La retraite 3ème temps de la vie",
     description:
-      "Guide pratique des étapes du deuil avec outils d'accompagnement et soutien.",
+      "Préparation et approche positive pour vivre cette nouvelle étape dans la joie et les autres.",
     icon: <ScrollText className="h-7 w-7 bg-white" />,
   },
   {
     title: "Comprendre les contrats obsèques",
     description:
-      "Aspects juridiques et pratiques des contrats obsèques pour un meilleur accompagnement.",
+      "Démystifier le produit financier et a accompagner le récit d'une vie réussie pour envisager des funérailles apaisees et préparées.",
     icon: <BookOpen className="h-7 w-7 bg-white" />,
   },
   {
@@ -55,10 +37,28 @@ const themes = [
     icon: <ScrollText className="h-7 w-7 bg-white" />,
   },
   {
-    title: "La retraite 3ème temps de la vie",
+    title: "Traverser le deuil",
     description:
-      "Préparation et approche positive pour vivre pleinement cette nouvelle étape.",
+      "De faire son deuil à vivre le deuil, découvrir les essentiels du deuil et les transformations positives provoqués par cette expérience.",
     icon: <BookOpen className="h-7 w-7 bg-white" />,
+  },
+  {
+    title: "Qu'est-ce que la mort?",
+    description:
+      "Approche philosophique et pratique de la mort et son impact sociétal.",
+    icon: <ScrollText className="h-7 w-7 bg-white" />,
+  },
+  {
+    title: "Ritualisation, inhumation et crémation",
+    description:
+      "Les différentes pratiques de ritualisation avec leur signification culturelle et leurs impacts sur la civilisation.",
+    icon: <BookOpen className="h-7 w-7 bg-white" />,
+  },
+  {
+    title: "Le funéraire",
+    description:
+      "Exploration des pratiques funéraires contemporaines et leur évolution dans notre société, couvrant les aspects pratiques et culturels.",
+    icon: <ScrollText className="h-7 w-7 bg-white" />,
   },
 ];
 
