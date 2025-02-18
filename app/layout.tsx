@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <Head>
-        <link rel="icon" href="/@logotype.png" />
+        <link rel="icon" href="/images/logoag.png" />
       </Head>
       <body
         className={`${agrandirRegular.variable} ${agrandirBold.variable} ${agrandirGrandHeavy.variable} ${playfairDisplay.variable} antialiased flex flex-col min-h-screen`}
