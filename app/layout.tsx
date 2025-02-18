@@ -7,6 +7,7 @@ import {
   playfairDisplay,
 } from "@/lib/fonts";
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -22,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <Head>
+        <link rel="icon" href="/@logotype.png" />
+      </Head>
       <body
         className={`${agrandirRegular.variable} ${agrandirBold.variable} ${agrandirGrandHeavy.variable} ${playfairDisplay.variable} antialiased flex flex-col min-h-screen`}
       >
