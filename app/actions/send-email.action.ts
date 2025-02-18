@@ -1,9 +1,18 @@
 "use server";
 
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APPLICATION_SECRET,
+  },
+});
 
 const schema = z.object({
   name: z.string().min(1),
@@ -25,9 +34,9 @@ export async function sendEmail(formData: FormData) {
   const { name, phone, message } = validatedFields.data;
 
   try {
-    await resend.emails.send({
-      from: "Anne Geron <ab@annegeron.fr>",
-      to: process.env.EMAIL_TO!,
+    await transporter.sendMail({
+      from: process.env.GMAIL_USER,
+      to: process.env.EMAIL_TO,
       subject: `New contact from ${name}`,
       text: `
         Name: ${name}
