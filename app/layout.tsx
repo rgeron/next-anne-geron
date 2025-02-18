@@ -9,6 +9,7 @@ import {
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import "./globals.css";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Anne Géron",
@@ -22,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body
         className={`${agrandirRegular.variable} ${agrandirBold.variable} ${agrandirGrandHeavy.variable} ${playfairDisplay.variable} antialiased flex flex-col min-h-screen`}
       >
