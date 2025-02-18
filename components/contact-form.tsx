@@ -26,7 +26,7 @@ export function ContactForm() {
   return (
     <form id="contact-form" action={onSubmit} className="space-y-8">
       <div
-        className={`${agrandirRegular.className}  grid grid-cols-1 md:grid-cols-2 gap-6`}
+        className={`${agrandirRegular.className}  flex flex-col md:grid-cols-2 gap-6`}
       >
         <div className="space-y-3">
           <Input
@@ -34,7 +34,7 @@ export function ContactForm() {
             name="name"
             placeholder="Votre nom"
             required
-            className="h-8 text-sm bg-white"
+            className="h-10 w-1/2 text-sm bg-white"
           />
         </div>
         <div className="space-y-3">
@@ -43,7 +43,7 @@ export function ContactForm() {
             name="phone"
             placeholder="Votre numéro de téléphone"
             required
-            className="h-8 text-sm bg-white"
+            className="h-10 text-sm w-1/2 bg-white"
           />
         </div>
       </div>
@@ -52,7 +52,7 @@ export function ContactForm() {
           id="message"
           name="message"
           placeholder="Votre message"
-          className="min-h-[100px] text-lg bg-white"
+          className="min-h-[150px] text-sm w-2/3 bg-white"
           required
         />
       </div>
