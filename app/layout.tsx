@@ -7,9 +7,9 @@ import {
   playfairDisplay,
 } from "@/lib/fonts";
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Toaster } from "sonner";
 import "./globals.css";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Anne Géron",
