@@ -65,7 +65,7 @@ export function Hero() {
 
             <Button
               variant="secondary"
-              className="absolute bottom-4 left-4 z-10"
+              className="absolute bottom-4 left-4 z-10 w-32 h-12 text-base"
               onClick={() => setShowBio(!showBio)}
             >
               {showBio ? <X /> : "Qui suis-je ?"}
@@ -78,7 +78,7 @@ export function Hero() {
                 opacity: showBio ? 1 : 0,
                 pointerEvents: showBio ? "auto" : "none",
               }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="max-w-prose bg-white text-black p-4 lg:p-6 mb-6">
                 <p className="text-sm sm:text-base lg:text-lg font-roboto mb-4 lg:mb-6">
@@ -87,10 +87,11 @@ export function Hero() {
                   l&apos;accompagnement des seniors et des familles.
                 </p>
 
-                <p className="text-sm sm:text-base lg:text-lg font-roboto mb-4 lg:mb-6">J&apos;ai
-                  introduit le métier de funeral planner en France,
+                <p className="text-sm sm:text-base lg:text-lg font-roboto mb-4 lg:mb-6">
+                  J&apos;ai introduit le métier de funeral planner en France,
                   sensibilisant à l&apos;importance de préparer ses funérailles
-                  avec ou sans contrat financier.</p>
+                  avec ou sans contrat financier.
+                </p>
 
                 <p className="text-sm sm:text-base lg:text-lg font-roboto mb-4 lg:mb-6">
                   Formatrice et conférencière, j&apos;œuvre pour démystifier les
