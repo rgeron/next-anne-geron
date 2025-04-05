@@ -126,10 +126,10 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.9 }}
                 className="absolute inset-0 flex items-center justify-center text-center"
               >
-                <p className="text-xl md:text-2xl lg:text-3xl font-agrandir-bold italic text-gray-800">
+                <p className="text-lg md:text-xl lg:text-2xl italic  text-gray-800">
                   {defaultQuotes[currentQuoteIndex].text}
                 </p>
               </motion.div>
