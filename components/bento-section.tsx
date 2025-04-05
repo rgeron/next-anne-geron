@@ -44,7 +44,7 @@ function BentoCard(props: {
         props.className
       }`}
     >
-      <div className="flex h-full w-full items-center justify-center text-center text-2xl font-bold">
+      <div className="flex h-full w-full items-center justify-center text-center text-3xl font-bold">
         {props.title}
       </div>
     </Link>

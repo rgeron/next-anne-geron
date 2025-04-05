@@ -1,11 +1,14 @@
 "use client";
 
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function PartnersSection() {
   const [partners1, setPartners1] = useState<string[]>([]);
   const [partners2, setPartners2] = useState<string[]>([]);
+  const titleRef = useRef(null);
+  const isInView = useInView(titleRef, { once: true, amount: 0.5 });
 
   useEffect(() => {
     // Get all partner logos
@@ -32,11 +35,17 @@ export function PartnersSection() {
   }, []);
 
   return (
-    <section className="py-16 overflow-hidden bg-white">
+    <section className="py-16 overflow-hidden bg-white mb-16">
       <div className="container mx-auto px-4 mb-6">
-        <h2 className="text-4xl text-center mb-6 font-agrandir">
+        <motion.h2
+          ref={titleRef}
+          className="text-4xl text-center mb-6 font-agrandir"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
           Nous avons eu des projets ensemble
-        </h2>
+        </motion.h2>
       </div>
 
       {/* First row of logos */}

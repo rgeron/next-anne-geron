@@ -1,11 +1,6 @@
 import { Footer } from "@/components/my-footer";
 import { Header } from "@/components/my-header";
-import {
-  agrandirBold,
-  agrandirGrandHeavy,
-  agrandirRegular,
-  playfairDisplay,
-} from "@/lib/fonts";
+import { roboto } from "@/lib/fonts";
 import type { Metadata } from "next";
 import Head from "next/head";
 import { Toaster } from "sonner";
@@ -27,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body
-        className={`${agrandirRegular.variable} ${agrandirBold.variable} ${agrandirGrandHeavy.variable} ${playfairDisplay.variable} antialiased flex flex-col min-h-screen`}
+        className={`${roboto.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-grow">{children}</main>

@@ -2,7 +2,6 @@ import { sendEmail } from "@/app/actions/send-email.action";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { agrandirRegular } from "@/lib/fonts";
 import { useTransition } from "react";
 import { toast } from "sonner";
 
@@ -26,7 +25,7 @@ export function ContactForm() {
   return (
     <form id="contact-form" action={onSubmit} className="space-y-8">
       <div
-        className={`${agrandirRegular.className}  flex flex-col md:grid-cols-2 gap-6`}
+        className= "flex flex-col md:grid-cols-2 gap-6"
       >
         <div className="space-y-3">
           <Input

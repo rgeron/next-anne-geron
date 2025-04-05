@@ -9,7 +9,7 @@ export function ConferencesCard() {
     >
       <div className="flex h-full w-full flex-col gap-4">
        
-        <h3 className="text-2xl font-bold">Conférences & Ateliers</h3>
+        <h3 className="text-3xl font-bold">Conférences & Ateliers</h3>
         <p className="text-lg text-gray-700">
           Je crée et j&apos;anime des conférences sur mesure.
         </p>

@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        playfair: ["var(--font-playfair)"],
+        roboto: ["var(--font-roboto)"],
       },
       colors: {
         background: "hsl(var(--background))",
