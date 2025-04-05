@@ -12,7 +12,9 @@ export function CardGameCard(props: CardGameCardProps) {
   return (
     <Card className="w-[350px] flex flex-col">
       <CardHeader>
-        <CardTitle className="whitespace-pre-wrap">{props.title}</CardTitle>
+        <CardTitle className="whitespace-pre-wrap font-roboto">
+          {props.title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="grid grid-cols-2 gap-4">
         {props.images.map((image, index) => (

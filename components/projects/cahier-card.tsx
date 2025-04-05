@@ -23,25 +23,27 @@ export function CahierCard({
   return (
     <Card className="w-[350px] flex flex-col">
       <CardHeader>
-        <CardTitle className="whitespace-pre-wrap">{title}</CardTitle>
+        <CardTitle className="whitespace-pre-wrap font-roboto">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col flex-1">
         {description && (
-          <CardDescription className="mb-4 whitespace-normal flex-1">
+          <CardDescription className="mb-4 whitespace-normal flex-1 font-roboto">
             {description}
           </CardDescription>
         )}
         <div className="flex gap-2 mt-auto">
           {pdfs ? (
             pdfs.map((pdf, pdfIndex) => (
-              <Button key={pdfIndex} asChild>
+              <Button key={pdfIndex} asChild className="font-roboto">
                 <a href={pdf.url} target="_blank" rel="noopener noreferrer">
                   {pdf.label}
                 </a>
               </Button>
             ))
           ) : (
-            <Button asChild>
+            <Button asChild className="font-roboto">
               <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
                 Voir un extrait du PDF
               </a>

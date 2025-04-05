@@ -84,8 +84,7 @@ const autresProductions: AutreProduction[] = [
         src: "/podcasts/p2Histoire.mp4",
       },
       {
-        title:
-          "Les 3 transitions : assurance, épargne, projet obsèques",
+        title: "Les 3 transitions : assurance, épargne, projet obsèques",
         src: "/podcasts/p3Assurance.mp4",
       },
     ],
@@ -106,7 +105,7 @@ export function ProjectsSection() {
       className="container mx-auto py-8 md:py-24 space-y-8 md:space-y-16 px-4 md:px-6 bg-[#8B8589] rounded-3xl"
     >
       <div>
-        <h2 className="text-2xl md:text-4xl font-mono font-bold tracking-tighter mb-6 md:mb-12 text-center text-white">
+        <h2 className="text-2xl font-roboto md:text-4xl tracking-tighter mb-6 md:mb-12 text-center text-white">
           Extraits de mes travaux
         </h2>
         <ScrollArea className="w-full">
@@ -120,7 +119,7 @@ export function ProjectsSection() {
       </div>
 
       <div>
-        <h2 className="text-2xl md:text-4xl font-mono font-bold tracking-tighter mb-6 md:mb-12 text-center text-white">
+        <h2 className="text-2xl font-roboto md:text-4xl tracking-tighter mb-6 md:mb-12 text-center text-white">
           Extraits vidéos d&apos;une conférence
         </h2>
         <ScrollArea className="w-full">
@@ -136,7 +135,7 @@ export function ProjectsSection() {
       </div>
 
       <div>
-        <h2 className="text-2xl md:text-4xl font-mono font-bold tracking-tighter mb-6 md:mb-12 text-center text-white">
+        <h2 className="text-2xl font-roboto md:text-4xl tracking-tighter mb-6 md:mb-12 text-center text-white">
           Autres productions
         </h2>
         <ScrollArea className="w-full">
