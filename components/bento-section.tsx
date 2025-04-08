@@ -19,6 +19,7 @@ type ColorVariant =
 
 function BentoCard(props: {
   title: string;
+  preTitle?: string;
   href: string;
   variant?: ColorVariant;
   className?: string;
@@ -44,8 +45,13 @@ function BentoCard(props: {
         props.className
       }`}
     >
-      <div className="flex h-full w-full items-center justify-center text-center text-3xl font-bold">
-        {props.title}
+      <div className="flex h-full w-full flex-col items-center justify-center text-center">
+        {props.preTitle && (
+          <div className="text-2xl font-medium opacity-80 mb-1">
+            {props.preTitle}
+          </div>
+        )}
+        <div className="text-2xl font-bold">{props.title}</div>
       </div>
     </Link>
   );
@@ -78,6 +84,7 @@ export function BentoSection() {
 
         <div className="md:col-span-6 lg:col-span-4">
           <BentoCard
+            preTitle="je suis"
             title="Mandataire Judiciaire à la Protection des Majeurs"
             href="/mandataire"
             variant="taupeGray"
