@@ -35,7 +35,7 @@ export function PartnersSection() {
   }, []);
 
   return (
-    <section className="py-16 overflow-hidden bg-white mb-16">
+    <section className="py-16 overflow-hidden bg-white mt-10 mb-10">
       <div className="container mx-auto px-4 mb-6">
         <motion.h2
           ref={titleRef}
