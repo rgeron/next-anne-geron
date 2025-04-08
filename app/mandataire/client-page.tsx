@@ -7,7 +7,7 @@ export default function ClientMandatairePage() {
     taupeGray: "#8B8589",
     warmBeige: "#E8DCD0",
     paleCream: "#F5F0E8",
-    softPeriwinkle: "#C5CBE3",
+    richSage: "#7A918D",
     icyWhite: "#F8F9FA",
   } as const;
 
@@ -58,19 +58,16 @@ export default function ClientMandatairePage() {
           variants={fadeInUp}
         >
           <span className="relative inline-block">
-            <span className="relative z-10">
+            <span className="relative z-10 text-black">
               Mandataire Judiciaire
             </span>
             <motion.span
               className="absolute bottom-1 left-0 w-full h-3 transform -rotate-1 z-0"
-              style={{ backgroundColor: colors.softPeriwinkle }}
+              style={{ backgroundColor: colors.warmBeige }}
               variants={highlightText}
             ></motion.span>
           </span>
-          <span
-            className="block text-3xl mt-3 font-medium"
-            style={{ color: colors.taupeGray }}
-          >
+          <span className="block text-3xl mt-3 font-medium text-black">
             à la Protection des Majeurs
           </span>
         </motion.h1>
@@ -83,18 +80,15 @@ export default function ClientMandatairePage() {
             className="p-6 rounded-lg shadow-sm"
             style={{
               background: `linear-gradient(to right, ${colors.paleCream}, ${colors.icyWhite})`,
-              borderLeft: `4px solid ${colors.softPeriwinkle}`,
+              borderLeft: `4px solid ${colors.richSage}`,
             }}
             variants={fadeInUp}
           >
             <motion.p className="text-xl leading-relaxed">
-              <span
-                className="font-semibold text-2xl block mb-2"
-                style={{ color: colors.taupeGray }}
-              >
+              <span className="font-semibold text-2xl block mb-2 text-black">
                 Métier méconnu d&apos;utilité publique
               </span>
-              <span style={{ color: colors.taupeGray }}>
+              <span className="text-black">
                 d&apos;auxiliaire de justice au service des vulnérables dans la
                 gestion de leurs affaires personnelles, administratives ou
                 patrimoniales.
@@ -107,10 +101,7 @@ export default function ClientMandatairePage() {
             style={{ backgroundColor: colors.warmBeige }}
             variants={fadeInUp}
           >
-            <motion.p
-              className="text-lg leading-relaxed"
-              style={{ color: colors.taupeGray }}
-            >
+            <motion.p className="text-lg leading-relaxed text-black">
               Diplômée du{" "}
               <span className="italic font-medium">
                 Certification Nationale de Compétence
@@ -132,13 +123,10 @@ export default function ClientMandatairePage() {
             }}
           >
             <motion.p className="text-xl leading-relaxed">
-              <span
-                className="text-2xl font-medium block mb-3"
-                style={{ color: colors.taupeGray }}
-              >
+              <span className="text-2xl font-medium block mb-3 text-black">
                 La vulnérabilité est au cœur de notre humanité.
               </span>
-              <span style={{ color: colors.taupeGray }}>
+              <span className="text-black">
                 Devenir mandataire pour majeurs protégés, c&apos;est soutenir,
                 accompagner ou représenter les personnes incapables ou
                 invalides, de manière temporaire ou permanente.
