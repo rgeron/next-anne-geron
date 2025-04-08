@@ -53,7 +53,7 @@ function BentoCard(props: {
 
 export function BentoSection() {
   return (
-    <section className="container mx-auto p-4 my-8">
+    <section className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 auto-rows-[200px]">
         {/* Formations - Left side */}
         <div className="md:col-span-3 lg:col-span-4 row-span-2">
