@@ -124,7 +124,7 @@ export function DevisForm({ type, onSubmit }: DevisFormProps) {
         {type === "conference" && (
           <div className="space-y-2">
             <label htmlFor="audienceSize" className="text-sm font-medium">
-              Taille estimée de l'audience
+              Taille estimée de l&apos;audience
             </label>
             <Select name="audienceSize" required>
               <SelectTrigger className="h-10 text-sm bg-white">
