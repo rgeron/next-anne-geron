@@ -86,9 +86,9 @@ export default function FormationsPage() {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-base sm:text-lg py-4 px-4 sm:py-6 sm:px-8"
           >
-            <span className="block sm:hidden">Demander un devis</span>
+            <span className="block sm:hidden">Formuler une demande</span>
             <span className="hidden sm:block">
-              Demander un devis pour une formation personnalisée
+              Formuler une demande pour une formation personnalisée
             </span>
           </Button>
         </Link>
