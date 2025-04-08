@@ -17,9 +17,7 @@ export default function DevisPage() {
           Formuler une demande pour une conférence personnalisée
         </h1>
         <p className="text-lg text-center max-w-3xl mb-8">
-          Complétez le formulaire ci-dessous pour recevoir un devis personnalisé
-          pour votre conférence ou atelier. Nous vous répondrons dans les plus
-          brefs délais.
+          Complétez le formulaire ci-dessous.
         </p>
         <DevisForm type="conference" onSubmit={sendDevisRequest} />
       </div>
