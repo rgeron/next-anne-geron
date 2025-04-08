@@ -12,9 +12,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <div className="max-w-xl">
             <div className="text-2xl mb-8">
-              <h2 className="text-4xl mb-10 font-mono font-semibold">
-                Contactez-moi !
-              </h2>
+              <h2 className="text-4xl mb-10 font-semibold">Contactez-moi !</h2>
               <div className="flex flex-col gap-4 mb-8 text-base">
                 <div className="flex flex-col gap-1">
                   <a
@@ -42,6 +40,7 @@ export function Footer() {
                     className="flex items-center gap-2 hover:underline"
                   >
                     <Linkedin size={20} />
+                    voir mon linkedin
                   </a>
                 </div>
               </div>

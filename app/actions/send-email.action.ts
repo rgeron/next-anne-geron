@@ -16,6 +16,7 @@ const transporter = nodemailer.createTransport({
 
 const schema = z.object({
   name: z.string().min(1),
+  email: z.string().email(),
   phone: z.string().min(1),
   message: z.string().min(1),
 });
@@ -23,6 +24,7 @@ const schema = z.object({
 export async function sendEmail(formData: FormData) {
   const validatedFields = schema.safeParse({
     name: formData.get("name"),
+    email: formData.get("email"),
     phone: formData.get("phone"),
     message: formData.get("message"),
   });
@@ -31,7 +33,7 @@ export async function sendEmail(formData: FormData) {
     return { error: "Validation failed" };
   }
 
-  const { name, phone, message } = validatedFields.data;
+  const { name, email, phone, message } = validatedFields.data;
 
   try {
     await transporter.sendMail({
@@ -40,6 +42,7 @@ export async function sendEmail(formData: FormData) {
       subject: `New contact from ${name}`,
       text: `
         Name: ${name}
+        Email: ${email}
         Phone: ${phone}
         Message: ${message}
       `,

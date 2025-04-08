@@ -24,14 +24,22 @@ export function ContactForm() {
 
   return (
     <form id="contact-form" action={onSubmit} className="space-y-8">
-      <div
-        className= "flex flex-col md:grid-cols-2 gap-6"
-      >
+      <div className="flex flex-col md:grid-cols-2 gap-6">
         <div className="space-y-3">
           <Input
             id="name"
             name="name"
             placeholder="Votre nom"
+            required
+            className="h-10 w-1/2 text-sm bg-white"
+          />
+        </div>
+        <div className="space-y-3">
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Votre email"
             required
             className="h-10 w-1/2 text-sm bg-white"
           />
