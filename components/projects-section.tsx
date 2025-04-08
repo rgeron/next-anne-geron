@@ -55,7 +55,7 @@ const videos = [
     image: "https://i3.ytimg.com/vi/i2euZkYQ4-I/maxresdefault.jpg",
   },
   {
-    title: "Les rituels indispensables pour cheminer dans le deuil",
+    title: "Les rituels pour cheminer dans le deuil",
     videoId: "LmIDsKYlGnw",
     image: "https://i3.ytimg.com/vi/LmIDsKYlGnw/maxresdefault.jpg",
   },
