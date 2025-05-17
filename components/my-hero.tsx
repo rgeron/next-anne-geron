@@ -84,7 +84,7 @@ export function Hero() {
                 <p className="text-sm sm:text-base lg:text-lg font-roboto mb-4 lg:mb-6">
                   Gérontologue et thérapeute spécialisée dans le vieillissement,
                   avec une expertise de plus de 20 ans dans
-                  l&apos;accompagnement des seniors et des familles.
+                  l&apos;accompagnement des seniors et des familles..
                 </p>
 
                 <p className="text-sm sm:text-base lg:text-lg font-roboto mb-4 lg:mb-6">
