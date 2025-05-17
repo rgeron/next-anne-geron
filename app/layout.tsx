@@ -2,7 +2,7 @@ import { Footer } from "@/components/my-footer";
 import { Header } from "@/components/my-header";
 import { roboto } from "@/lib/fonts";
 import type { Metadata } from "next";
-import Head from "next/head";
+import Script from "next/script";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -18,12 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <Head>
+      <head>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </head>
       <body
         className={`${roboto.variable} antialiased flex flex-col min-h-screen`}
       >
+        <Script
+          src="https://sdk.hellouniweb.com/base/main.js"
+          data-account="lZOzpEvf"
+        />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
