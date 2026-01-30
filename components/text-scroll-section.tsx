@@ -5,7 +5,7 @@ export function TextScrollSection() {
     <section className="mx-auto max-w-5xl px-4 py-20 text-center flex flex-col gap-12">
       <TextGradientScroll
         text="Investir dans le lien gérontologue – mandataire judiciaire"
-        className="text-3xl font-semibold tracking-tight md:text-5xl"
+        className="text-2xl font-semibold tracking-tight md:text-4xl"
       />
 
       <TextGradientScroll
@@ -13,17 +13,17 @@ export function TextScrollSection() {
 Vieillir sans repères, c’est avancer de nuit sans carte. La gérontologie éclaire le chemin et la carte.
 Elle permet de comprendre que la santé, le logement, les aidants, la sécurité, la prévention et les ressources financières forment un tout.
 Chaque élément influence l’équilibre de l’ensemble.`}
-        className="text-xl md:text-2xl leading-relaxed"
+        className="text-lg md:text-xl leading-relaxed"
       />
 
       <TextGradientScroll
         text="Lorsque cette lecture globale est donnée, les citoyens anticipent. Les aidants comprennent. Les tensions diminuent. Les dispositifs de protection adaptés et proportionnés sont mieux acceptés."
-        className="text-xl md:text-2xl leading-relaxed"
+        className="text-lg md:text-xl leading-relaxed"
       />
 
       <TextGradientScroll
         text="Le Mandataire Judiciaire à la Protection des Majeurs (Curateur et Tuteur) n’intervient pas en rupture. Il intervient en continuité. Il apporte une réponse concrète, sécurisée et protectrice lorsque les fragilités dépassent les capacités d’autonomie."
-        className="text-xl md:text-2xl leading-relaxed"
+        className="text-lg md:text-xl leading-relaxed"
       />
 
       <TextGradientScroll
@@ -32,13 +32,13 @@ C’est rendre lisible l’action publique.
 C’est protéger sans déposséder.
 C’est accompagner sans infantiliser.
 C'est maintenir et promouvoir l'autonomie.`}
-        className="text-xl md:text-2xl leading-relaxed"
+        className="text-lg md:text-xl leading-relaxed"
       />
 
       <TextGradientScroll
         text={`Pour un territoire, ce choix est stratégique.
 Il renforce la confiance des citoyens, soutient les aidants et construit une politique du grand âge à la fois efficace et profondément humaine.`}
-        className="text-xl md:text-2xl leading-relaxed"
+        className="text-lg md:text-xl leading-relaxed"
       />
     </section>
   );
