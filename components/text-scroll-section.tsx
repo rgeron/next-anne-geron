@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { TextGradientScroll } from "@/components/ui/text-gradient-scroll";
+import Link from "next/link";
 
 export function TextScrollSection() {
   return (
@@ -40,6 +42,16 @@ C'est maintenir et promouvoir l'autonomie.`}
 Il renforce la confiance des citoyens, soutient les aidants et construit une politique du grand âge à la fois efficace et profondément humaine.`}
         className="text-lg md:text-xl leading-relaxed"
       />
+      <div className="flex flex-col items-start gap-6">
+        <Link href="#footer">
+          <Button
+            size="lg"
+            className="text-lg px-8 py-6 h-auto bg-[#8B8589] hover:bg-[#7A7579]"
+          >
+            Rencontrons-nous
+          </Button>
+        </Link>
+      </div>
     </section>
   );
 }
