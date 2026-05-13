@@ -1,11 +1,4 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { ExternalLink } from "lucide-react";
 
 type CahierCardProps = {
   title: string | React.ReactNode;
@@ -21,36 +14,47 @@ export function CahierCard({
   pdfs,
 }: CahierCardProps) {
   return (
-    <Card className="w-[350px] flex flex-col">
-      <CardHeader>
-        <CardTitle className="whitespace-pre-wrap font-roboto">
-          {title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-col flex-1">
-        {description && (
-          <CardDescription className="mb-4 whitespace-normal flex-1 font-roboto">
-            {description}
-          </CardDescription>
-        )}
-        <div className="flex gap-2 mt-auto">
+    <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div className="h-1.5 bg-gradient-to-r from-stone-400 via-stone-500 to-stone-600" />
+      <div className="flex flex-col flex-1 p-8 gap-5">
+        <div>
+          <p className="text-[10px] uppercase tracking-widest text-stone-400 font-medium mb-2">
+            Cahier
+          </p>
+          <h3 className="font-roboto font-bold text-xl leading-snug text-stone-800">
+            {title}
+          </h3>
+        </div>
+        <p className="text-sm text-stone-500 leading-relaxed flex-1">
+          {description}
+        </p>
+        <div className="flex flex-wrap gap-3 pt-4 border-t border-stone-100">
           {pdfs ? (
             pdfs.map((pdf, pdfIndex) => (
-              <Button key={pdfIndex} asChild className="font-roboto">
-                <a href={pdf.url} target="_blank" rel="noopener noreferrer">
-                  {pdf.label}
-                </a>
-              </Button>
+              <a
+                key={pdfIndex}
+                href={pdf.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-stone-700 hover:bg-stone-900 px-5 py-2.5 rounded-xl transition-colors duration-200"
+              >
+                <ExternalLink className="w-4 h-4" />
+                {pdf.label}
+              </a>
             ))
           ) : (
-            <Button asChild className="font-roboto">
-              <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
-                Voir un extrait du PDF
-              </a>
-            </Button>
+            <a
+              href={pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-stone-700 hover:bg-stone-900 px-5 py-2.5 rounded-xl transition-colors duration-200"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Voir un extrait du PDF
+            </a>
           )}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

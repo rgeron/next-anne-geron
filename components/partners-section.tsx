@@ -26,6 +26,7 @@ export function PartnersSection() {
       "mnt.png",
       "ouihelp.png",
       "umr.png",
+      "1001vies.png"
     ];
 
     // Split partners into two groups

@@ -2,7 +2,6 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { CahierCard } from "./projects/cahier-card";
 import { CardGameCard } from "./projects/card-game-card";
 import { VideoPlayerCard } from "./projects/video-player-card";
-import { YTBCard } from "./projects/ytb-card";
 
 const cahiers = [
   {
@@ -48,29 +47,6 @@ const cahiers = [
   },
 ];
 
-const videos = [
-  {
-    title: "Quel prix pour une demeure d'éternité ?",
-    videoId: "i2euZkYQ4-I",
-    image: "https://i3.ytimg.com/vi/i2euZkYQ4-I/maxresdefault.jpg",
-  },
-  {
-    title: "Les rituels pour cheminer dans le deuil",
-    videoId: "LmIDsKYlGnw",
-    image: "https://i3.ytimg.com/vi/LmIDsKYlGnw/maxresdefault.jpg",
-  },
-  {
-    title: "Les soins palliatifs",
-    videoId: "4wABfaLkayU",
-    image: "https://i3.ytimg.com/vi/4wABfaLkayU/maxresdefault.jpg",
-  },
-  {
-    title: "La crémation",
-    videoId: "XOi6841Vbso",
-    image: "https://i3.ytimg.com/vi/XOi6841Vbso/maxresdefault.jpg",
-  },
-];
-
 type AutreProduction =
   | { title: string; videos: { title: string; src: string }[] }
   | { title: string; images: { src: string; alt: string }[] };
@@ -108,30 +84,11 @@ export function ProjectsSection() {
         <h2 className="text-2xl font-roboto md:text-4xl tracking-tighter mb-6 md:mb-12 text-center text-white">
           Extraits de mes travaux
         </h2>
-        <ScrollArea className="w-full">
-          <div className="flex space-x-4 pb-4">
-            {cahiers.map((cahier, index) => (
-              <CahierCard key={index} {...cahier} />
-            ))}
-          </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
-      </div>
-
-      <div>
-        <h2 className="text-2xl font-roboto md:text-4xl tracking-tighter mb-6 md:mb-12 text-center text-white">
-          Extraits vidéos d&apos;une conférence
-        </h2>
-        <ScrollArea className="w-full">
-          <div className="flex space-x-4 pb-4">
-            {videos.map((video, index) => (
-              <div key={index} className="w-[280px] flex-none">
-                <YTBCard {...video} />
-              </div>
-            ))}
-          </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {cahiers.map((cahier, index) => (
+            <CahierCard key={index} {...cahier} />
+          ))}
+        </div>
       </div>
 
       <div>
