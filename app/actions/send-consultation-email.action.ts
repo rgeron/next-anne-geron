@@ -18,14 +18,16 @@ const schema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
   phone: z.string().min(1),
-  message: z.string().min(1),
+  problematique: z.string().min(1),
+  message: z.string().optional(),
 });
 
-export async function sendEmail(formData: FormData) {
+export async function sendConsultationEmail(formData: FormData) {
   const validatedFields = schema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
     phone: formData.get("phone"),
+    problematique: formData.get("problematique"),
     message: formData.get("message"),
   });
 
@@ -33,7 +35,7 @@ export async function sendEmail(formData: FormData) {
     return { error: "Veuillez remplir tous les champs obligatoires." };
   }
 
-  const { name, email, phone, message } = validatedFields.data;
+  const { name, email, phone, problematique, message } = validatedFields.data;
 
   const html = `
 <!DOCTYPE html>
@@ -49,8 +51,8 @@ export async function sendEmail(formData: FormData) {
           <tr>
             <td style="background-color:#2c3e2d;padding:32px 40px;text-align:center;">
               <p style="margin:0 0 4px 0;color:#c9b99a;font-size:12px;letter-spacing:3px;text-transform:uppercase;">Anne Géron</p>
-              <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:normal;letter-spacing:1px;">Nouveau message de contact</h1>
-              <p style="margin:12px 0 0 0;color:#a8b8a9;font-size:12px;">Reçu via le formulaire du site internet</p>
+              <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:normal;letter-spacing:1px;">Demande de consultation</h1>
+              <p style="margin:12px 0 0 0;color:#a8b8a9;font-size:12px;">Reçu via le formulaire de prise de rendez-vous du site internet</p>
             </td>
           </tr>
 
@@ -77,13 +79,26 @@ export async function sendEmail(formData: FormData) {
                   </td>
                 </tr>
                 <tr>
+                  <td style="padding:12px 0;${message ? "border-bottom:1px solid #eeebe6;" : ""}">
+                    <p style="margin:0 0 8px 0;color:#8a8a8a;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Problématique</p>
+                    <div style="background-color:#f9f7f4;border-left:3px solid #c9b99a;padding:16px 20px;border-radius:0 4px 4px 0;">
+                      <p style="margin:0;color:#2c2c2c;font-size:15px;line-height:1.7;">${problematique.replace(/\n/g, "<br>")}</p>
+                    </div>
+                  </td>
+                </tr>
+                ${
+                  message
+                    ? `
+                <tr>
                   <td style="padding:12px 0;">
-                    <p style="margin:0 0 8px 0;color:#8a8a8a;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Message</p>
+                    <p style="margin:0 0 8px 0;color:#8a8a8a;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Message complémentaire</p>
                     <div style="background-color:#f9f7f4;border-left:3px solid #c9b99a;padding:16px 20px;border-radius:0 4px 4px 0;">
                       <p style="margin:0;color:#2c2c2c;font-size:15px;line-height:1.7;">${message.replace(/\n/g, "<br>")}</p>
                     </div>
                   </td>
-                </tr>
+                </tr>`
+                    : ""
+                }
               </table>
             </td>
           </tr>
@@ -92,7 +107,7 @@ export async function sendEmail(formData: FormData) {
           <tr>
             <td style="background-color:#f9f7f4;padding:20px 40px;border-top:1px solid #eeebe6;text-align:center;">
               <p style="margin:0;color:#aaaaaa;font-size:11px;line-height:1.6;">
-                Ce message a été envoyé automatiquement depuis le formulaire de contact du site<br>
+                Ce message a été envoyé automatiquement depuis le formulaire de consultation du site<br>
                 <strong style="color:#888;">anne-geron.fr</strong>
               </p>
             </td>
@@ -107,31 +122,30 @@ export async function sendEmail(formData: FormData) {
   `.trim();
 
   const text = `
-Nouveau message de contact — anne-geron.fr
+Demande de consultation — anne-geron.fr
 
 Nom : ${name}
 E-mail : ${email}
 Téléphone : ${phone}
-
-Message :
-${message}
+Problématique : ${problematique}
+${message ? `\nMessage complémentaire :\n${message}` : ""}
 
 ---
-Ce message a été envoyé depuis le formulaire de contact du site anne-geron.fr.
+Ce message a été envoyé depuis le formulaire de consultation du site anne-geron.fr.
   `.trim();
 
   try {
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
       to: process.env.EMAIL_TO,
-      subject: `Nouveau message de contact — ${name}`,
+      subject: `Demande de consultation — ${name}`,
       text,
       html,
     });
 
     return { success: true };
   } catch (error: unknown) {
-    console.error("Failed to send email:", error);
+    console.error("Failed to send consultation email:", error);
     return {
       error: error instanceof Error ? error.message : "Échec de l'envoi.",
     };
