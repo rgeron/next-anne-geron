@@ -107,6 +107,7 @@ export default function ClientMandatairePage() {
                 Certification Nationale de Compétence
               </span>{" "}
               en qualité de Mandataire Judiciaire à la Protection des Majeurs.
+              Agréé pour exercer en libéral dans l&apos;Essonne.
             </motion.p>
           </motion.div>
 

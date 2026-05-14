@@ -10,7 +10,7 @@ export function ConsultationsCard() {
       <div className="flex h-full w-full flex-col gap-4">
         <h3 className="text-3xl font-bold">Consultations</h3>
         <p className="text-lg text-gray-700">
-          Accompagnement géronto-psychologique.
+          Gérontologie, médiation et facilitation de prise de décisions
         </p>
         <div className="relative h-60 w-full overflow-hidden rounded-xl">
           <Image
