@@ -78,6 +78,13 @@ export function Header() {
                 >
                   Conférences
                 </Link>
+                <Link
+                  href="/consultations"
+                  className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#E8DCD0] transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Consultation
+                </Link>
                 <button
                   className="block w-full text-left px-4 py-2 text-sm text-gray-800 hover:bg-[#E8DCD0] transition-colors"
                   onClick={() => scrollToSection("projects-section")}

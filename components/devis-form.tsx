@@ -102,20 +102,25 @@ export function DevisForm({ type, onSubmit }: DevisFormProps) {
         {type === "formation" && (
           <div className="space-y-2">
             <label htmlFor="formationType" className="text-sm font-medium">
-              Type de formation
+              Public visé
             </label>
             <Select name="formationType" required>
               <SelectTrigger className="h-10 text-sm bg-white">
-                <SelectValue placeholder="Sélectionnez un type de formation" />
+                <SelectValue placeholder="Sélectionnez le public visé" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="intra">
-                  Formation intra-entreprise
+                <SelectItem value="professionnels-sante">
+                  Professionnels de santé et médico-social
                 </SelectItem>
-                <SelectItem value="inter">
-                  Formation inter-entreprises
+                <SelectItem value="aidants">
+                  Aidants et familles
                 </SelectItem>
-                <SelectItem value="custom">Formation sur mesure</SelectItem>
+                <SelectItem value="grand-public">
+                  Grand public / retraités
+                </SelectItem>
+                <SelectItem value="professionnels-funeraire">
+                  Professionnels du funéraire
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -138,19 +143,6 @@ export function DevisForm({ type, onSubmit }: DevisFormProps) {
             </Select>
           </div>
         )}
-
-        <div className="space-y-2">
-          <label htmlFor="date" className="text-sm font-medium">
-            Date souhaitée
-          </label>
-          <Input
-            id="date"
-            name="date"
-            type="date"
-            required
-            className="h-10 text-sm bg-white"
-          />
-        </div>
 
         <div className="space-y-2">
           <label htmlFor="location" className="text-sm font-medium">

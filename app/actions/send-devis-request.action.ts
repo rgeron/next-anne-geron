@@ -20,7 +20,6 @@ const formationSchema = z.object({
   email: z.string().email("Email invalide"),
   phone: z.string().min(1, "Le téléphone est requis"),
   formationType: z.string().min(1, "Le type de formation est requis"),
-  date: z.string().min(1, "La date est requise"),
   location: z.string().min(1, "Le lieu est requis"),
   requirements: z.string().min(1, "Les besoins spécifiques sont requis"),
   type: z.literal("formation"),
@@ -32,7 +31,6 @@ const conferenceSchema = z.object({
   email: z.string().email("Email invalide"),
   phone: z.string().min(1, "Le téléphone est requis"),
   audienceSize: z.string().min(1, "La taille de l'audience est requise"),
-  date: z.string().min(1, "La date est requise"),
   location: z.string().min(1, "Le lieu est requis"),
   requirements: z.string().min(1, "Les besoins spécifiques sont requis"),
   type: z.literal("conference"),
@@ -54,7 +52,6 @@ export async function sendDevisRequest(formData: FormData) {
     ...(type === "formation"
       ? { formationType: formData.get("formationType") }
       : { audienceSize: formData.get("audienceSize") }),
-    date: formData.get("date"),
     location: formData.get("location"),
     requirements: formData.get("requirements"),
     type,
@@ -70,7 +67,7 @@ export async function sendDevisRequest(formData: FormData) {
   const typeLabel = isFormation ? "Formation" : "Conférence";
 
   const specificField = isFormation
-    ? { label: "Type de formation", value: data.formationType }
+    ? { label: "Public visé", value: data.formationType }
     : { label: "Taille de l'audience", value: data.audienceSize };
 
   const html = `
@@ -136,12 +133,6 @@ export async function sendDevisRequest(formData: FormData) {
                 </tr>
                 <tr>
                   <td style="padding:10px 0;border-bottom:1px solid #eeebe6;">
-                    <p style="margin:0 0 3px 0;color:#8a8a8a;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Date souhaitée</p>
-                    <p style="margin:0;color:#2c2c2c;font-size:16px;">${data.date}</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #eeebe6;">
                     <p style="margin:0 0 3px 0;color:#8a8a8a;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Lieu</p>
                     <p style="margin:0;color:#2c2c2c;font-size:16px;">${data.location}</p>
                   </td>
@@ -188,7 +179,6 @@ Téléphone : ${data.phone}
 
 DÉTAILS DE LA PRESTATION
 ${specificField.label} : ${specificField.value}
-Date souhaitée : ${data.date}
 Lieu : ${data.location}
 Besoins spécifiques : ${data.requirements}
 

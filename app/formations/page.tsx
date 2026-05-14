@@ -16,49 +16,49 @@ const themes = [
     title: "Grand âge et dépendance",
     description:
       "Les enjeux du vieillissement et accompagnement des personnes âgées en perte d'autonomie.",
-    icon: <BookOpen className="h-7 w-7 bg-white" />,
+    icon: <BookOpen className="h-5 w-5" />,
   },
   {
     title: "La retraite 3ème temps de la vie",
     description:
       "Préparation et approche positive pour vivre cette nouvelle étape dans la joie et les autres.",
-    icon: <ScrollText className="h-7 w-7 bg-white" />,
+    icon: <ScrollText className="h-5 w-5" />,
   },
   {
     title: "Comprendre les contrats obsèques",
     description:
       "Démystifier le produit financier et a accompagner le récit d'une vie réussie pour envisager des funérailles apaisees et préparées.",
-    icon: <BookOpen className="h-7 w-7 bg-white" />,
+    icon: <BookOpen className="h-5 w-5" />,
   },
   {
     title: "Transmettre ses expériences de vie",
     description:
       "Méthodes pour partager son vécu et sa sagesse avec les générations futures.",
-    icon: <ScrollText className="h-7 w-7 bg-white" />,
+    icon: <ScrollText className="h-5 w-5" />,
   },
   {
     title: "Traverser le deuil",
     description:
       "De faire son deuil à vivre le deuil, découvrir les essentiels du deuil et les transformations positives provoqués par cette expérience.",
-    icon: <BookOpen className="h-7 w-7 bg-white" />,
+    icon: <BookOpen className="h-5 w-5" />,
   },
   {
     title: "Qu'est-ce que la mort?",
     description:
       "Approche philosophique et pratique de la mort et son impact sociétal.",
-    icon: <ScrollText className="h-7 w-7 bg-white" />,
+    icon: <ScrollText className="h-5 w-5" />,
   },
   {
     title: "Ritualisation, inhumation et crémation",
     description:
       "Les différentes pratiques de ritualisation avec leur signification culturelle et leurs impacts sur la civilisation.",
-    icon: <BookOpen className="h-7 w-7 bg-white" />,
+    icon: <BookOpen className="h-5 w-5" />,
   },
   {
     title: "Le funéraire",
     description:
       "Exploration des pratiques funéraires contemporaines et leur évolution dans notre société, couvrant les aspects pratiques et culturels.",
-    icon: <ScrollText className="h-7 w-7 bg-white" />,
+    icon: <ScrollText className="h-5 w-5" />,
   },
 ];
 
