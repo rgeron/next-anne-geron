@@ -1,141 +1,48 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-export default function ClientMandatairePage() {
-  const colors = {
-    taupeGray: "#8B8589",
-    warmBeige: "#E8DCD0",
-    paleCream: "#F5F0E8",
-    richSage: "#7A918D",
-    icyWhite: "#F8F9FA",
-  } as const;
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
-
-  const staggerChildren = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const highlightText = {
-    hidden: {
-      opacity: 0,
-      width: "0%",
-    },
-    visible: {
-      opacity: 1,
-      width: "100%",
-      transition: {
-        duration: 0.8,
-        delay: 0.2,
-      },
-    },
-  };
-
+export function ClientMandatairePage() {
   return (
-    <main className="container mx-auto px-4 py-12 mt-10">
-      <motion.div
-        className="flex flex-col items-center mb-16"
-        initial="hidden"
-        animate="visible"
-        variants={staggerChildren}
-      >
-        <motion.h1
-          className="text-5xl font-bold mb-10 text-center relative"
-          variants={fadeInUp}
-        >
-          <span className="relative inline-block">
-            <span className="relative z-10 text-black">
-              Mandataire Judiciaire
-            </span>
-            <motion.span
-              className="absolute bottom-1 left-0 w-full h-3 transform -rotate-1 z-0"
-              style={{ backgroundColor: colors.warmBeige }}
-              variants={highlightText}
-            ></motion.span>
-          </span>
-          <span className="block text-3xl mt-3 font-medium text-black">
-            à la Protection des Majeurs
-          </span>
-        </motion.h1>
+    <main className="container mx-auto px-4 py-8 mt-10 max-w-3xl">
+      <div className="flex flex-col items-center mb-12 text-center">
+        <h1 className="text-4xl font-bold mb-3">Mandataire judiciaire</h1>
+        <p className="text-sm uppercase tracking-widest text-gray-400">
+          À la protection des majeurs
+        </p>
+      </div>
 
-        <motion.div
-          className="text-start max-w-3xl mx-auto space-y-8"
-          variants={staggerChildren}
-        >
-          <motion.div
-            className="p-6 rounded-lg shadow-sm"
-            style={{
-              background: `linear-gradient(to right, ${colors.paleCream}, ${colors.icyWhite})`,
-              borderLeft: `4px solid ${colors.richSage}`,
-            }}
-            variants={fadeInUp}
-          >
-            <motion.p className="text-xl leading-relaxed">
-              <span className="font-semibold text-2xl block mb-2 text-black">
-                Métier méconnu d&apos;utilité publique
-              </span>
-              <span className="text-black">
-                d&apos;auxiliaire de justice au service des vulnérables dans la
-                gestion de leurs affaires personnelles, administratives ou
-                patrimoniales.
-              </span>
-            </motion.p>
-          </motion.div>
+      <section className="mb-14 space-y-5 text-gray-700 text-[1.05rem] leading-relaxed">
+        <div className="rounded-2xl bg-[#F5F0E8] px-7 py-7 shadow-sm border border-[#e0d5c5]">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-3">
+            Métier méconnu d&apos;utilité publique
+          </h2>
+          <p>
+            Auxiliaire de justice au service des vulnérables dans la gestion de
+            leurs affaires personnelles, administratives ou patrimoniales.
+          </p>
+        </div>
+      </section>
 
-          <motion.div
-            className="p-6 rounded-lg"
-            style={{ backgroundColor: colors.warmBeige }}
-            variants={fadeInUp}
-          >
-            <motion.p className="text-lg leading-relaxed text-black">
-              Diplômée du{" "}
-              <span className="italic font-medium">
-                Certification Nationale de Compétence
-              </span>{" "}
-              en qualité de Mandataire Judiciaire à la Protection des Majeurs.
-              Agréé pour exercer en libéral dans l&apos;Essonne.
-            </motion.p>
-          </motion.div>
+      <section className="mb-14">
+        <div className="rounded-2xl bg-[#F5F0E8] px-7 py-7 shadow-sm border border-[#e0d5c5]">
+          <p className="text-gray-700 leading-relaxed">
+            Diplômée du{" "}
+            <strong className="font-semibold text-gray-900">
+              Certification Nationale de Compétence
+            </strong>{" "}
+            en qualité de mandataire judiciaire à la protection des majeurs.
+            Agréée pour exercer en libéral dans l&apos;Essonne.
+          </p>
+        </div>
+      </section>
 
-          <motion.div
-            className="p-6 rounded-lg shadow-sm"
-            style={{
-              background: `linear-gradient(to right, ${colors.paleCream}, ${colors.icyWhite})`,
-              borderLeft: `4px solid ${colors.warmBeige}`,
-            }}
-            variants={fadeInUp}
-            whileHover={{
-              y: -5,
-              transition: { duration: 0.2 },
-            }}
-          >
-            <motion.p className="text-xl leading-relaxed">
-              <span className="text-2xl font-medium block mb-3 text-black">
-                La vulnérabilité est au cœur de notre humanité.
-              </span>
-              <span className="text-black">
-                Devenir mandataire pour majeurs protégés, c&apos;est soutenir,
-                accompagner ou représenter les personnes incapables ou
-                invalides, de manière temporaire ou permanente.
-              </span>
-            </motion.p>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+      <section className="mb-14 rounded-2xl bg-[#2c3e2d] px-8 py-8">
+        <h2 className="text-xl font-semibold mb-4 text-white">
+          La vulnérabilité est au cœur de notre humanité
+        </h2>
+        <p className="text-[#c9d9ca] leading-relaxed">
+          Devenir mandataire pour majeurs protégés, c&apos;est soutenir,
+          accompagner ou représenter les personnes incapables ou invalides, de
+          manière temporaire ou permanente.
+        </p>
+      </section>
     </main>
   );
 }
